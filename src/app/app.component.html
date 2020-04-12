@@ -1,9 +1,72 @@
-<h1 class="titulo-centrado">Hola mundo </h1>
-<br>
+<style>
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+</style>
+<h1 class="titulo-centrado">Bienvenido {{ alumno.name }}</h1>
+<br />
 <p>Mi nombre es Ezequiel y estoy por terminar la carrera de ingeniería</p>
-<img src="../assets/imgs/bandera_20_junio.png" width="400" height="300" alt="Bandera argentina">
-<hr>
-<h2>Situación actual de Argentina</h2>
-<h3>Situación actual de Entre Ríos</h3>
-
-<router-outlet></router-outlet>
+<img
+  [src]="alumno.avatar"
+  [width]="width"
+  [height]="height"
+  alt="Bandera argentina"
+/>
+<hr />
+<table style="width: 100%;">
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Mail</th>
+    <th>Avatar</th>
+    <th>Promedio general</th>
+    <th>Carrera</th>
+    <th>Condición</th>
+    <th>URL</th>
+    <th>Materias en curso</th>
+  </tr>
+  <tr>
+    <th>{{ alumno.id }}</th>
+    <th>{{ alumno.name }}</th>
+    <th>{{ alumno.mail }}</th>
+    <th><img class="imagen" [src]="alumno.avatar" /></th>
+    <th>{{ alumno.prom_gral }}</th>
+    <th>{{ alumno.carrera }}</th>
+    <th>{{ alumno.condicion }}</th>
+    <th>
+      <a [href]="alumno.url" target="_blank">{{ alumno.url }}</a>
+    </th>
+    <th>{{ alumno.materias_en_curso }}</th>
+  </tr>
+  <tr>
+    <th>{{ alumno.id }}</th>
+    <th>{{ alumno.name }}</th>
+    <th>{{ alumno.mail }}</th>
+    <th><img class="imagen" [src]="alumno.avatar" /></th>
+    <th>{{ alumno.prom_gral }}</th>
+    <th>{{ alumno.carrera }}</th>
+    <th>{{ alumno.condicion }}</th>
+    <th>
+      <a [href]="alumno.url" target="_blank">{{ alumno.url }}</a>
+    </th>
+    <th>{{ alumno.materias_en_curso }}</th>
+  </tr>
+  <tr>
+    <th>{{ alumno.id }}</th>
+    <th>{{ alumno.name }}</th>
+    <th>{{ alumno.mail }}</th>
+    <th><img class="imagen" [src]="alumno.avatar" /></th>
+    <th>{{ alumno.prom_gral }}</th>
+    <th>{{ alumno.carrera }}</th>
+    <th>{{ alumno.condicion }}</th>
+    <th>
+      <a [href]="alumno.url" target="_blank">{{ alumno.url }}</a>
+    </th>
+    <th>{{ alumno.materias_en_curso }}</th>
+  </tr>
+</table>
+<hr />
+<button (click)="modificarNombre()">Boton</button>

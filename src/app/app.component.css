@@ -1,4 +1,9 @@
 .titulo-centrado {
-    text-align: center;
-    color: red;
+  text-align: center;
+  color: red;
+}
+
+.imagen {
+  width: 120px;
+  height: auto;
 }
