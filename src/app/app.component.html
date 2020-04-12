@@ -1,9 +1,24 @@
-<h1 class="titulo-centrado">Hola mundo </h1>
-<br>
+<h1 class="titulo-centrado">Hola mundo</h1>
+<br />
 <p>Mi nombre es Ezequiel y estoy por terminar la carrera de ingeniería</p>
-<img src="../assets/imgs/bandera_20_junio.png" width="400" height="300" alt="Bandera argentina">
-<hr>
-<h2>Situación actual de Argentina</h2>
+<img
+  src="../assets/imgs/bandera_20_junio.png"
+  width="400"
+  height="300"
+  alt="Bandera argentina"
+/>
+<hr />
+<h2>{{ texto }}</h2>
 <h3>Situación actual de Entre Ríos</h3>
 
 <router-outlet></router-outlet>
+
+<label for="username">{{ texto }}</label
+><br />
+<input
+  [placeholder]="texto_placeholder"
+  [(ngModel)]="texto"
+  type="text"
+  id="username"
+  name="username"
+/><br />
