@@ -18,8 +18,6 @@ export class AppComponent {
     url: "https://github.com/ezebloj",
     materias_en_curso: ["Cálculo I", " Física I", " Álgebra"],
   };
-  width: number = 450;
-  height: number = 350;
   modificarNombre() {
     this.alumno.name = "Ezequiel";
   }
