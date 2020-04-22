@@ -1,3 +1,63 @@
-<p>
-  content works!
-</p>
+<style>
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+</style>
+
+<table style="width: 100%;">
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Mail</th>
+    <th>Avatar</th>
+    <th>Promedio general</th>
+    <th>Carrera</th>
+    <th>Condición</th>
+    <th>URL</th>
+    <th>Materias en curso</th>
+  </tr>
+  <tr>
+    <th>{{ alumno.id }}</th>
+    <th>{{ alumno.name }}</th>
+    <th>{{ alumno.mail }}</th>
+    <th><img class="imagen" [src]="alumno.avatar" /></th>
+    <th>{{ alumno.prom_gral }}</th>
+    <th>{{ alumno.carrera }}</th>
+    <th>{{ alumno.condicion }}</th>
+    <th>
+      <a [href]="alumno.url" target="_blank">{{ alumno.url }}</a>
+    </th>
+    <th>{{ alumno.materias_en_curso }}</th>
+  </tr>
+  <tr>
+    <th>{{ alumno.id }}</th>
+    <th>{{ alumno.name }}</th>
+    <th>{{ alumno.mail }}</th>
+    <th><img class="imagen" [src]="alumno.avatar" /></th>
+    <th>{{ alumno.prom_gral }}</th>
+    <th>{{ alumno.carrera }}</th>
+    <th>{{ alumno.condicion }}</th>
+    <th>
+      <a [href]="alumno.url" target="_blank">{{ alumno.url }}</a>
+    </th>
+    <th>{{ alumno.materias_en_curso }}</th>
+  </tr>
+  <tr>
+    <th>{{ alumno.id }}</th>
+    <th>{{ alumno.name }}</th>
+    <th>{{ alumno.mail }}</th>
+    <th><img class="imagen" [src]="alumno.avatar" /></th>
+    <th>{{ alumno.prom_gral }}</th>
+    <th>{{ alumno.carrera }}</th>
+    <th>{{ alumno.condicion }}</th>
+    <th>
+      <a [href]="alumno.url" target="_blank">{{ alumno.url }}</a>
+    </th>
+    <th>{{ alumno.materias_en_curso }}</th>
+  </tr>
+</table>
+<hr />
+<button (click)="modificarNombre()">Boton</button>
