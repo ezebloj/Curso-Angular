@@ -6,7 +6,15 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./content.component.css"],
 })
 export class ContentComponent implements OnInit {
+  nombre: string = "";
+  arregloNombres: string[] = [];
+
   constructor() {}
 
   ngOnInit() {}
+
+  enviar() {
+    this.arregloNombres.push(this.nombre);
+    this.nombre = "";
+  }
 }
