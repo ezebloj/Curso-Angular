@@ -1,13 +1,16 @@
 <div class="container">
+  <!-- Película -->
   <label>Película</label>
   <input type="text" class="form-control" [(ngModel)]="nombre" />
   <p *ngIf="!nombre">Por favor, escribe el nombre de la película</p>
   <br />
+  <!-- Género -->
   <label>Género</label>
   <input type="text" class="form-control" [(ngModel)]="genero" />
   <p *ngIf="!nombre">Por favor, escribe el género</p>
   <br />
-  <label>Categoría</label>
+  <!-- Link -->
+  <label>Link</label>
   <input type="text" class="form-control" [(ngModel)]="link" />
   <p *ngIf="!nombre">Por favor, escribe un link</p>
   <br />
@@ -15,11 +18,15 @@
     Agregar
   </button>
   <br /><br />
-  <div class="card" style="width: 18rem;">
+  <div
+    class="card mb-2"
+    style="width: 18rem;"
+    *ngFor="let peli of arregloPeliculas"
+  >
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-      <a href="#" class="card-link">Card link</a>
+      <h5 class="card-title">{{ peli.nombre }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ peli.genero }}</h6>
+      <a href="#" class="card-link">{{ peli.link }}</a>
     </div>
   </div>
 </div>
