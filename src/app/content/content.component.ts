@@ -7,14 +7,16 @@ import { Component, OnInit } from "@angular/core";
 })
 export class ContentComponent implements OnInit {
   nombre: string = "";
-  arregloNombres: string[] = [];
+  genero: string = "";
+  link: string = "";
 
   constructor() {}
 
   ngOnInit() {}
 
-  enviar() {
-    this.arregloNombres.push(this.nombre);
-    this.nombre = "";
+  guardar() {
+    // console.log(
+    //   "Nombre " + this.nombre + " Género " + this.genero + " Link " + this.link
+    // );
   }
 }
