@@ -1,1 +1,25 @@
-<app-card></app-card>
+<div class="container">
+  <!-- Película -->
+  <label>Película</label>
+  <input type="text" class="form-control" [(ngModel)]="nombre" />
+  <p class="text-danger" *ngIf="!nombre">
+    Por favor, escribe el nombre de la película
+  </p>
+  <br />
+  <!-- Género -->
+  <label>Género</label>
+  <input type="text" class="form-control" [(ngModel)]="genero" />
+  <p class="text-danger" *ngIf="!genero">Por favor, escribe el género</p>
+  <br />
+  <!-- Link -->
+  <label>Link</label>
+  <input type="text" class="form-control" [(ngModel)]="link" />
+  <p class="text-danger" *ngIf="!link">Por favor, escribe un link</p>
+  <br />
+  <button type="submit" class="btn btn-danger" (click)="guardar()">
+    Agregar
+  </button>
+  <br /><br />
+
+  <app-card *ngFor="let peli of arregloPeliculas"></app-card>
+</div>

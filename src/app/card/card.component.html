@@ -1,34 +1,7 @@
-<div class="container">
-  <!-- Película -->
-  <label>Película</label>
-  <input type="text" class="form-control" [(ngModel)]="nombre" />
-  <p class="text-danger" *ngIf="!nombre">
-    Por favor, escribe el nombre de la película
-  </p>
-  <br />
-  <!-- Género -->
-  <label>Género</label>
-  <input type="text" class="form-control" [(ngModel)]="genero" />
-  <p class="text-danger" *ngIf="!genero">Por favor, escribe el género</p>
-  <br />
-  <!-- Link -->
-  <label>Link</label>
-  <input type="text" class="form-control" [(ngModel)]="link" />
-  <p class="text-danger" *ngIf="!link">Por favor, escribe un link</p>
-  <br />
-  <button type="submit" class="btn btn-danger" (click)="guardar()">
-    Agregar
-  </button>
-  <br /><br />
-  <div
-    class="card mb-2"
-    style="width: 18rem;"
-    *ngFor="let peli of arregloPeliculas"
-  >
-    <div class="card-body">
-      <h5 class="card-title">{{ peli.nombre }}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{ peli.genero }}</h6>
-      <a href="#" class="card-link">{{ peli.link }}</a>
-    </div>
+<div class="card mb-2" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Titanic</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Drama</h6>
+    <a href="#" class="card-link">link</a>
   </div>
 </div>
