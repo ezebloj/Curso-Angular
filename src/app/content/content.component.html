@@ -21,5 +21,10 @@
   </button>
   <br /><br />
 
-  <app-card *ngFor="let peli of arregloPeliculas"></app-card>
+  <app-card
+    *ngFor="let peli of arregloPeliculas"
+    [titulo]="peli.nombre"
+    [subtitulo]="peli.genero"
+    [link]="peli.link"
+  ></app-card>
 </div>
