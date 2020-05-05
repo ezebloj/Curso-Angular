@@ -19,6 +19,9 @@
   <button type="submit" class="btn btn-danger" (click)="guardar()">
     Agregar
   </button>
+  <div class="alert alert-danger mt-2" *ngIf="tituloCard" role="alert">
+    Se ha marcado {{ tituloCard }}
+  </div>
   <br /><br />
 
   <app-card
@@ -26,5 +29,6 @@
     [titulo]="peli.nombre"
     [subtitulo]="peli.genero"
     [link]="peli.link"
+    (leido)="peliMarcado($event)"
   ></app-card>
 </div>

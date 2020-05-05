@@ -11,6 +11,7 @@ export class ContentComponent implements OnInit {
   genero: string = "";
   link: string = "";
   arregloPeliculas: Pelicula[] = [];
+  tituloCard: string = "";
 
   constructor() {}
 
@@ -30,5 +31,13 @@ export class ContentComponent implements OnInit {
     this.nombre = "";
     this.genero = "";
     this.link = "";
+  }
+
+  peliMarcado(event: any) {
+    console.log(event);
+    this.tituloCard = event.titulo;
+    setTimeout(() => {
+      this.tituloCard = "";
+    }, 3000);
   }
 }
