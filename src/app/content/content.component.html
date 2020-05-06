@@ -20,7 +20,8 @@
     Agregar
   </button>
   <div class="alert alert-danger mt-2" *ngIf="tituloCard" role="alert">
-    Se ha marcado {{ tituloCard }}
+    <span *ngIf="marcado == true">Se ha marcado {{ tituloCard }}</span>
+    <span *ngIf="marcado == false">Se ha desmarcado {{ tituloCard }}</span>
   </div>
   <br /><br />
 

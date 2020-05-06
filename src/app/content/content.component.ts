@@ -12,6 +12,7 @@ export class ContentComponent implements OnInit {
   link: string = "";
   arregloPeliculas: Pelicula[] = [];
   tituloCard: string = "";
+  marcado: boolean = false;
 
   constructor() {}
 
@@ -36,6 +37,7 @@ export class ContentComponent implements OnInit {
   peliMarcado(event: any) {
     console.log(event);
     this.tituloCard = event.titulo;
+    this.marcado = event.marcado;
     setTimeout(() => {
       this.tituloCard = "";
     }, 3000);
