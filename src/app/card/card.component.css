@@ -1,3 +1,7 @@
 .tachado {
   text-decoration: line-through;
 }
+
+.estiloFecha {
+  font-size: 10px;
+}

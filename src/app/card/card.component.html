@@ -1,9 +1,12 @@
 <div class="card mb-2" style="width: 18rem;">
   <div class="card-body">
+    <p class="card-subtitle mb-2 text-muted estiloFecha">
+      {{ creado | date: "short" }}
+    </p>
     <h5 class="card-title" [ngClass]="{ tachado: marcado == true }">
-      {{ titulo }}
+      {{ titulo | titlecase }}
     </h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{ subtitulo }}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">{{ subtitulo | uppercase }}</h6>
     <a href="#" class="card-link">{{ link }}</a>
     <br /><br />
     <button

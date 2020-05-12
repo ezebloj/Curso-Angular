@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./card.component.css"],
 })
 export class CardComponent implements OnInit {
+  @Input() creado: Date;
   @Input() titulo: string = "";
   @Input() subtitulo: string = "";
   @Input() link: string = "";

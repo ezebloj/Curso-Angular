@@ -27,6 +27,7 @@
 
   <app-card
     *ngFor="let peli of arregloPeliculas"
+    [creado]="peli.creado"
     [titulo]="peli.nombre"
     [subtitulo]="peli.genero"
     [link]="peli.link"
