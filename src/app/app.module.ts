@@ -7,7 +7,8 @@ import { HeaderComponent } from "./header/header.component";
 import { ContentComponent } from "./content/content.component";
 import { FooterComponent } from "./footer/footer.component";
 import { FormsModule } from "@angular/forms";
-import { CardComponent } from './card/card.component';
+import { CardComponent } from "./card/card.component";
+import { PeliculaService } from "./services/pelicula.service";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { CardComponent } from './card/card.component';
     CardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  providers: [PeliculaService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
