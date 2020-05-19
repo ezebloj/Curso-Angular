@@ -15,7 +15,7 @@ export class CardComponent implements OnInit {
 
   //variable para identificar si se marca o no el título
   marcado: boolean = false;
-  nombreBoton: string = "Marcar";
+  //nombreBoton: string = "Marcar";
 
   mensajeEvento: any = {
     titulo: "",
