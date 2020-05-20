@@ -27,6 +27,8 @@
 
   <div class="row">
     <div class="col" *ngFor="let peli of arregloPeliculas">
+      <!-- Componente independiente hijo -->
+      <!-- $event -> información adicional del evento (viene del emisor del evento) -->
       <app-card
         [creado]="peli.creado"
         [titulo]="peli.nombre"

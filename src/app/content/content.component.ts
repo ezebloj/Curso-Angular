@@ -40,6 +40,7 @@ export class ContentComponent implements OnInit {
   }
 
   peliMarcado(event: any) {
+    //muestra algo en la consola del navegador, no es necesaria esta línea para que se ejecute la función (debug)
     console.log(event);
     this.tituloCard = event.titulo;
     this.marcado = event.marcado;
