@@ -1,6 +1,7 @@
 <div class="card mb-2" style="width: 18rem;">
   <div class="card-body">
     <p class="card-subtitle mb-2 text-muted estiloFecha">
+      <!-- Angular Pipes https://angular.io/api?type=pipe -->
       {{ creado | date: "short" }}
     </p>
     <h5 class="card-title" [ngClass]="{ tachado: marcado == true }">
