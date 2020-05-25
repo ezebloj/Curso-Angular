@@ -1,0 +1,31 @@
+<!-- Bootstrap 'Navbar' -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="">Carga</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <!-- routerLinkActive (líneas 20 y 21) hacen que se vea más en negrita -->
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <!-- routerLink : acá va el path al componente que quiero ir -->
+        <a class="nav-link" routerLink="tarjeta">Tarjetas</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="tabla">Tabla</a>
+      </li>
+    </ul>
+  </div>
+</nav>

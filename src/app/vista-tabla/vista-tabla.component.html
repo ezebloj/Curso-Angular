@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Título</th>
+      <th scope="col">Categoría</th>
+      <th scope="col">Links</th>
+      <th scope="col">Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- 'let i -> crea variable i igual al índice (index) del for. Abajo le suma 1 por ser base 0' -->
+    <!-- Desarrollo del *ngFor (abajo) -->
+    <!-- for(int index = 0; index < arregloPeliculas.length) {
+            peli = arreglopeliculas[index]
+          } -->
+    <tr *ngFor="let peli of arregloPeliculas; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ peli.nombre }}</td>
+      <td>{{ peli.genero }}</td>
+      <td>{{ peli.link }}</td>
+      <td>{{ peli.creado | date: "short" }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+<div class="alert alert-danger mt-2" *ngIf="tituloCard" role="alert">
+  <span *ngIf="marcado == true">Se ha marcado {{ tituloCard }}</span>
+  <span *ngIf="marcado == false">Se ha desmarcado {{ tituloCard }}</span>
+</div>
+<br /><br />
+
+<!-- Bootstrap grid -->
+<div class="row">
+  <div class="col" *ngFor="let peli of arregloPeliculas">
+    <!-- Componente independiente hijo del content-->
+    <!-- El compoente content se está enterando lo que pasa en el card -->
+    <!-- $event -> información adicional del evento (viene del emisor del evento) -->
+    <app-card
+      [creado]="peli.creado"
+      [titulo]="peli.nombre"
+      [subtitulo]="peli.genero"
+      [link]="peli.link"
+      (leido)="peliMarcado($event)"
+    ></app-card>
+  </div>
+</div>

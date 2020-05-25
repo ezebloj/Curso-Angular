@@ -1,3 +1,7 @@
+<!-- header y navbar son los únicos componentes fijos en la aplicación -->
+<app-navbar></app-navbar>
 <app-header></app-header>
-<app-content></app-content>
-<app-footer></app-footer>
+<!-- router-outlet sirve como comodín, en base a la ruta me va a poner el componente que corresponde a esa ruta -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

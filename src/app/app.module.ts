@@ -9,6 +9,9 @@ import { FooterComponent } from "./footer/footer.component";
 import { FormsModule } from "@angular/forms";
 import { CardComponent } from "./card/card.component";
 import { PeliculaService } from "./services/pelicula.service";
+import { NavbarComponent } from './navbar/navbar.component';
+import { VistaTablaComponent } from './vista-tabla/vista-tabla.component';
+import { VistaTarjetaComponent } from './vista-tarjeta/vista-tarjeta.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { PeliculaService } from "./services/pelicula.service";
     ContentComponent,
     FooterComponent,
     CardComponent,
+    NavbarComponent,
+    VistaTablaComponent,
+    VistaTarjetaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [PeliculaService],
