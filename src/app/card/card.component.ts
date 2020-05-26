@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Pelicula } from "../models/pelicula.models";
 
 @Component({
   selector: "app-card",
