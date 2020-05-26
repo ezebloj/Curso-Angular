@@ -8,6 +8,8 @@ import { PeliculaService } from "../services/pelicula.service";
   styleUrls: ["./vista-tabla.component.css"],
 })
 export class VistaTablaComponent implements OnInit {
+  //no se utiliza input porque accedemos a los datos a través del servicio
+
   arregloPeliculas: Pelicula[] = [];
 
   constructor(private peliculasService: PeliculaService) {}
