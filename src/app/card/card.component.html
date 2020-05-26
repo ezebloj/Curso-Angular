@@ -1,33 +1,37 @@
-<div class="card mb-2" style="width: 18rem;">
-  <div class="card-body">
-    <p class="card-subtitle mb-2 text-muted estiloFecha">
-      <!-- Angular Pipes https://angular.io/api?type=pipe -->
-      {{ creado | date: "short" }}
-    </p>
-    <h5 class="card-title" [ngClass]="{ tachado: marcado == true }">
-      {{ titulo | titlecase }}
-    </h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{ subtitulo | uppercase }}</h6>
-    <a href="#" class="card-link">{{ link }}</a>
-    <br /><br />
-    <button
-      type="button"
-      class="btn btn-primary btn-lg btn-block"
-      *ngIf="marcado == false"
-      (click)="marcar()"
-    >
-      Marcar
-    </button>
-    <button
-      type="button"
-      class="btn btn-primary btn-lg btn-block"
-      *ngIf="marcado == true"
-      (click)="marcar()"
-    >
-      <!-- Mejor opción - un solo botón:
-      <span *ngIf="marcado == false">Marcar</span>
-      <span *ngIf="marcado == true">Desmarcar</span> -->
-      Desmarcar
-    </button>
-  </div>
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Título</th>
+      <th scope="col">Categoría</th>
+      <th scope="col">Links</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- 'let i -> crea variable i igual al índice (index) del for. Abajo le suma 1 por ser base 0' -->
+    <!-- Desarrollo del *ngFor (abajo) -->
+    <!-- for(int index = 0; index < arregloPeliculas.length) {
+            peli = arreglopeliculas[index]
+          } -->
+    <tr>
+      <!-- <th scope="row">{{ i + 1 }}</th> -->
+      <td>{{ titulo | titlecase }}</td>
+      <td>{{ subtitulo | uppercase }}</td>
+      <td>{{ link }}</td>
+      <td>{{ creado | date: "short" }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-primary btn-lg btn-block"
+          *ngIf="marcado == false"
+          (click)="marcar()"
+        >
+          <span *ngIf="marcado == false">Marcar</span>
+          <span *ngIf="marcado == true">Desmarcar</span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
