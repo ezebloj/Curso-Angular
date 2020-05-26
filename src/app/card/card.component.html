@@ -15,8 +15,8 @@
     <!-- for(int index = 0; index < arregloPeliculas.length) {
             peli = arreglopeliculas[index]
           } -->
-    <tr>
-      <!-- <th scope="row">{{ i + 1 }}</th> -->
+    <tr *ngFor="let peli of arregloPeliculas; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
       <td>{{ titulo | titlecase }}</td>
       <td>{{ subtitulo | uppercase }}</td>
       <td>{{ link }}</td>

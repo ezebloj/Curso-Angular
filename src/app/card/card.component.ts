@@ -14,6 +14,8 @@ export class CardComponent implements OnInit {
   //EventEmitter --> emite algo
   @Output() leido = new EventEmitter<any>();
 
+  arregloPeliculas: Pelicula[] = [];
+
   //variable para identificar si se marca o no el título
   marcado: boolean = false;
   //nombreBoton: string = "Marcar";
