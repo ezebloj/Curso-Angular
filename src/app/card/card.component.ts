@@ -7,15 +7,10 @@ import { Pelicula } from "../models/pelicula.models";
   styleUrls: ["./card.component.css"],
 })
 export class CardComponent implements OnInit {
-  @Input() creado: Date;
-  @Input() titulo: string = "";
-  @Input() subtitulo: string = "";
-  @Input() link: string = "";
+  @Input() arregloPeliculas: Pelicula[] = [];
 
   //EventEmitter --> emite algo
   @Output() leido = new EventEmitter<any>();
-
-  arregloPeliculas: Pelicula[] = [];
 
   //variable para identificar si se marca o no el título
   marcado: boolean = false;
@@ -23,7 +18,7 @@ export class CardComponent implements OnInit {
 
   //objeto para pasar información adicional sobre el evento
   mensajeEvento: any = {
-    titulo: "",
+    nombre: "",
     marcado: false,
   };
 
