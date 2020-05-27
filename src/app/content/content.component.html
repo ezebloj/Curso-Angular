@@ -1,23 +1,28 @@
 <div class="container">
-  <!-- Película -->
-  <label>Película</label>
-  <input type="text" class="form-control" [(ngModel)]="nombre" />
-  <p class="text-danger" *ngIf="!nombre">
-    Por favor, escribe el nombre de la película
-  </p>
-  <br />
-  <!-- Género -->
-  <label>Género</label>
-  <input type="text" class="form-control" [(ngModel)]="genero" />
-  <p class="text-danger" *ngIf="!genero">Por favor, escribe el género</p>
-  <br />
-  <!-- Link -->
-  <label>Link</label>
-  <input type="text" class="form-control" [(ngModel)]="link" />
-  <p class="text-danger" *ngIf="!link">Por favor, escribe un link</p>
-  <br />
-  <button type="submit" class="btn btn-danger" (click)="guardar()">
-    Agregar
-  </button>
+  <!-- Formulario para cargar una nueva película -->
+  <!-- ngSubmit evento que se llama cuando un botón del tipo 'submit' se clickea, y al ejecutarse dispara a la función guardar() -->
+  <!-- # -> ID de la etiqueta en la que se encuentra -->
+  <form (ngSubmit)="guardar()" #formpeli="ngForm">
+    <!-- Película -->
+    <label>Película</label>
+    <input type="text" class="form-control" ngModel name="nombre" />
+    <p class="text-danger" *ngIf="!nombre">
+      Por favor, escribe el nombre de la película
+    </p>
+    <br />
+    <!-- Género -->
+    <label>Género</label>
+    <input type="text" class="form-control" ngModel name="genero" />
+    <p class="text-danger" *ngIf="!genero">Por favor, escribe el género</p>
+    <br />
+    <!-- Link -->
+    <label>Link</label>
+    <input type="text" class="form-control" ngModel name="link" />
+    <p class="text-danger" *ngIf="!link">Por favor, escribe un link</p>
+    <br />
+    <button type="submit" class="btn btn-danger">
+      Agregar
+    </button>
+  </form>
   <br /><br />
 </div>
