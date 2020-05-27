@@ -5,6 +5,7 @@
   <form (ngSubmit)="guardar()" #formpeli="ngForm">
     <!-- Película -->
     <label>Película</label>
+    <!-- 'nombre es una variable nueva para poder identificar el input' -->
     <input type="text" class="form-control" ngModel name="nombre" />
     <p class="text-danger" *ngIf="!nombre">
       Por favor, escribe el nombre de la película
