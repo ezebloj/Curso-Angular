@@ -17,10 +17,10 @@
           } -->
     <tr *ngFor="let peli of arregloPeliculas; let i = index">
       <th scope="row">{{ i + 1 }}</th>
-      <td>{{ titulo | titlecase }}</td>
-      <td>{{ subtitulo | uppercase }}</td>
-      <td>{{ link }}</td>
-      <td>{{ creado | date: "short" }}</td>
+      <td>{{ peli.nombre | titlecase }}</td>
+      <td>{{ peli.genero | uppercase }}</td>
+      <td>{{ peli.link }}</td>
+      <td>{{ peli.creado | date: "short" }}</td>
       <td>
         <button
           type="button"
