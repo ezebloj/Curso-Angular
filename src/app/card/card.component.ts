@@ -26,11 +26,11 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {}
 
-  marcar(arregloPeliculas: Pelicula) {
+  marcar(pelicula: Pelicula) {
     //cambia el estado marcado
     this.marcado = !this.marcado;
     //armo el objeto para pasar la info en el evento
-    this.mensajeEvento.titulo = this.arregloPeliculas;
+    this.mensajeEvento.titulo = pelicula.nombre;
     this.mensajeEvento.marcado = this.marcado;
     //emito el evento
     this.leido.emit(this.mensajeEvento);
