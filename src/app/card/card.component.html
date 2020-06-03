@@ -6,7 +6,8 @@
       <th scope="col">Categoría</th>
       <th scope="col">Links</th>
       <th scope="col">Fecha</th>
-      <th scope="col">Acción</th>
+      <!-- el width es para que los botones "Marcar" y "Desmarcar" sean del mismo tamaño -->
+      <th scope="col" style="width: 26%;">Acción</th>
     </tr>
   </thead>
   <tbody>
@@ -24,11 +25,19 @@
       <td>
         <button
           type="button"
-          class="btn btn-primary btn-lg btn-block"
-          (click)="marcar(peli)"
+          class="btn btn-link btn-lg btn-block"
+          *ngIf="arregloMarcado[i] == true"
+          (click)="marcar(peli, i)"
         >
-          <span *ngIf="marcado == false">Marcar</span>
-          <span *ngIf="marcado == true">Desmarcar</span>
+          Marcar
+        </button>
+        <button
+          type="button"
+          class="btn btn-link btn-lg btn-block"
+          *ngIf="arregloMarcado[i] == false"
+          (click)="marcar(peli, i)"
+        >
+          Desmarcar
         </button>
       </td>
     </tr>

@@ -8,13 +8,10 @@ import { Pelicula } from "../models/pelicula.models";
 })
 export class CardComponent implements OnInit {
   @Input() arregloPeliculas: Pelicula[] = [];
+  @Input() arregloMarcado: boolean[] = [];
 
   //EventEmitter --> emite algo
   @Output() leido = new EventEmitter<any>();
-
-  //variable para identificar si se marca o no el título
-  marcado: boolean = false;
-  //nombreBoton: string = "Marcar";
 
   //objeto para pasar información adicional sobre el evento
   mensajeEvento: any = {
@@ -23,15 +20,15 @@ export class CardComponent implements OnInit {
   };
 
   constructor() {}
-
+  //se ejecuta cuando se construye el componente
   ngOnInit() {}
 
-  marcar(pelicula: Pelicula) {
+  marcar(pelicula: Pelicula, index: number) {
     //cambia el estado marcado
-    this.marcado = !this.marcado;
+    this.arregloMarcado[index] = !this.arregloMarcado[index];
     //armo el objeto para pasar la info en el evento
     this.mensajeEvento.titulo = pelicula.nombre;
-    this.mensajeEvento.marcado = this.marcado;
+    this.mensajeEvento.marcado = this.arregloMarcado[index];
     //emito el evento
     this.leido.emit(this.mensajeEvento);
     // if (this.marcado == false) {

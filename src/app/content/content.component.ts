@@ -12,6 +12,7 @@ export class ContentComponent implements OnInit {
   genero: string = "";
   link: string = "";
   arregloPeliculas: Pelicula[] = [];
+  arregloMarcado: boolean[] = [];
   tituloCard: string = "";
   marcado: boolean = false;
 
@@ -19,6 +20,7 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {
     this.arregloPeliculas = this.peliculasService.getAllPeliculas();
+    this.arregloMarcado = this.peliculasService.arregloMarcado;
   }
 
   guardar() {
