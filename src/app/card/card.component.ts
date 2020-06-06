@@ -31,10 +31,5 @@ export class CardComponent implements OnInit {
     this.mensajeEvento.marcado = this.arregloMarcado[index];
     //emito el evento
     this.leido.emit(this.mensajeEvento);
-    // if (this.marcado == false) {
-    //   this.nombreBoton = "Marcar";
-    // } else {
-    //   this.nombreBoton = "Desmarcar";
-    // }
   }
 }

@@ -18,7 +18,9 @@
           } -->
     <tr *ngFor="let peli of arregloPeliculas; let i = index">
       <th scope="row">{{ i + 1 }}</th>
-      <td>{{ peli.nombre | titlecase }}</td>
+      <td [ngClass]="{ tachado: arregloMarcado[i] == true }">
+        {{ peli.nombre | titlecase }}
+      </td>
       <td>{{ peli.genero | uppercase }}</td>
       <td>{{ peli.link }}</td>
       <td>{{ peli.creado | date: "short" }}</td>
