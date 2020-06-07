@@ -29,7 +29,7 @@ export class ContentComponent implements OnInit {
   //guardamos una películas en el servicio
   guardar() {
     // saco c/u de los valores de los input del formulario. La variable después de 'value' debe coincidir con la del formulario
-    this.pelicula.nombre = this.formpeli.value.a1;
+    this.pelicula.nombre = this.formpeli.value.nombre;
     this.pelicula.genero = this.formpeli.value.genero;
     this.pelicula.link = this.formpeli.value.link;
     // llama a la función del servicio para guardar la película
