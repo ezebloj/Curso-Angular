@@ -38,7 +38,7 @@ export class ContentComponent implements OnInit {
       this.pelicula.genero,
       this.pelicula.link
     );
-    // función que ya trae el formulario y que lo resetea
+    // función que ya trae el formulario y que lo resetea. El reset() es una función propia del NgForm
     this.formpeli.reset();
   }
 }
