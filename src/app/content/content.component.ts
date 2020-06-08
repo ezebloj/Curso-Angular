@@ -11,6 +11,7 @@ import { NgForm } from "@angular/forms";
 })
 export class ContentComponent implements OnInit {
   pelicula: any;
+  generos = ["Acción", "Aventuras", "Cs. ficción", "Drama", "Infantil"];
 
   // ViewChild se utiliza para acceder a elementos (en este caso formulario) HTML. Dentro del () colocamos el ID del elemento HTML al cual queremos acceder, en este caso formpeli que es una referencia a mi formulario
   // se crea una variable formpeli de tipo NgForm para poder trabajar en el ts con el formulario

@@ -7,22 +7,31 @@
     <label>Película</label>
     <!-- 'nombre es una variable nueva para poder identificar el input' -->
     <!-- ngModel name -> notación específica del formulario -->
-    <input type="text" class="form-control" ngModel name="nombre" />
+    <input type="text" class="form-control" ngModel name="nombre" required />
     <p class="text-danger" *ngIf="!nombre">
       Por favor, escribe el nombre de la película
     </p>
     <br />
     <!-- Género -->
     <label>Género</label>
-    <input type="text" class="form-control" ngModel name="genero" />
+    <select class="form-control" ngModel name="genero" required>
+      <!-- 'value' representa el valor que se almacena en el select del formulario -->
+      <option value="">Seleccione un género</option>
+      <!-- el "texto_genero" debe coincidir las 3 veces -->
+      <!-- el value va con [] para que identifique que lo que está a la derecha del = es una variable y no un string -->
+      <option *ngFor="let texto_genero of generos" [value]="texto_genero">{{
+        texto_genero
+      }}</option>
+    </select>
     <p class="text-danger" *ngIf="!genero">Por favor, escribe el género</p>
     <br />
     <!-- Link -->
     <label>Link</label>
-    <input type="text" class="form-control" ngModel name="link" />
+    <input type="text" class="form-control" ngModel name="link" required />
     <p class="text-danger" *ngIf="!link">Por favor, escribe un link</p>
     <br />
-    <button type="submit" class="btn btn-danger">
+    <!-- el botón va a estar desabilitado mientras el formulario no esté valido -->
+    <button type="submit" class="btn btn-danger" [disabled]="!formpeli.valid">
       Agregar
     </button>
   </form>
