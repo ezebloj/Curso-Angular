@@ -5,9 +5,24 @@
   <form (ngSubmit)="guardar()" #formpeli="ngForm">
     <!-- Película -->
     <label>Película</label>
+    <i
+      class="fas fa-check-circle checked"
+      *ngIf="nombre.valid && nombre.dirty"
+    ></i>
+    <i
+      class="fas fa-exclamation-circle unchecked"
+      *ngIf="nombre.invalid && nombre.touched"
+    ></i>
     <!-- 'nombre es una variable nueva para poder identificar el input' -->
     <!-- ngModel name -> notación específica del formulario -->
-    <input type="text" class="form-control" ngModel name="nombre" required />
+    <input
+      type="text"
+      class="form-control"
+      ngModel
+      name="nombre"
+      required
+      #nombre="ngModel"
+    />
     <p class="text-danger" *ngIf="!nombre">
       Por favor, escribe el nombre de la película
     </p>
@@ -36,4 +51,16 @@
     </button>
   </form>
   <br /><br />
+  <!-- diry: es true cuando en el input se escribe al menos un caracter -->
+  <h4>Propiedad dirty del form --> {{ formpeli.controls.nombre.dirty }}</h4>
+  <!-- pristine: es true cuando en el input no se ha escrito ningún caracter -->
+  <h4>
+    Propiedad pristine del form --> {{ formpeli.controls.nombre.pristine }}
+  </h4>
+  <!-- touched: es true cuando saco el foco del input. Esto implica que en algún momento se hizo foco en el input -->
+  <h4>Propiedad touched del form --> {{ formpeli.controls.nombre.touched }}</h4>
+  <!-- valid: es true cuando la cumple la condición del validador que le pusimos al input -->
+  <h4>Propiedad valid del form --> {{ formpeli.controls.nombre.valid }}</h4>
+  <!-- invalid: es true cuando no cumple con la condición del validador que le pusimos al input -->
+  <h4>Propiedad invalid del form --> {{ formpeli.controls.nombre.invalid }}</h4>
 </div>
