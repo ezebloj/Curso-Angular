@@ -13,8 +13,9 @@
       class="fas fa-exclamation-circle unchecked"
       *ngIf="nombre.invalid && nombre.touched"
     ></i>
-    <!-- 'nombre es una variable nueva para poder identificar el input' -->
-    <!-- ngModel name -> notación específica del formulario -->
+    <!-- 'nombre' (del ngModel) es una variable nueva para poder identificar el input -->
+    <!-- ngModel name -> notación específica del formulario (siempre tiene que ir)-->
+    <!-- #nombre es para que la línea 14 reconozca esa variable-->
     <input
       type="text"
       class="form-control"
