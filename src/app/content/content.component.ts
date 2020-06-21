@@ -27,7 +27,7 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {}
 
-  //guardamos una películas en el servicio
+  //guardamos una película en el servicio
   guardar() {
     // saco c/u de los valores de los input del formulario. La variable después de 'value' debe coincidir con la del formulario
     this.pelicula.nombre = this.formpeli.value.nombre;
