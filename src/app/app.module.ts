@@ -6,12 +6,14 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
 import { ContentComponent } from "./content/content.component";
 import { FooterComponent } from "./footer/footer.component";
-import { FormsModule } from "@angular/forms";
+// el ReactiveFormsModule es para usar formularios reactivos
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CardComponent } from "./card/card.component";
 import { PeliculaService } from "./services/pelicula.service";
-import { NavbarComponent } from './navbar/navbar.component';
-import { VistaTablaComponent } from './vista-tabla/vista-tabla.component';
-import { VistaTarjetaComponent } from './vista-tarjeta/vista-tarjeta.component';
+import { NavbarComponent } from "./navbar/navbar.component";
+import { VistaTablaComponent } from "./vista-tabla/vista-tabla.component";
+import { VistaTarjetaComponent } from "./vista-tarjeta/vista-tarjeta.component";
+import { LibroComponent } from "./libro/libro.component";
 
 @NgModule({
   declarations: [
@@ -23,8 +25,9 @@ import { VistaTarjetaComponent } from './vista-tarjeta/vista-tarjeta.component';
     NavbarComponent,
     VistaTablaComponent,
     VistaTarjetaComponent,
+    LibroComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [PeliculaService],
   bootstrap: [AppComponent],
 })

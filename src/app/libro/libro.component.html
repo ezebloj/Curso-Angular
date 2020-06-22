@@ -1,0 +1,28 @@
+<div class="container">
+  <!-- el formGroup especifica a qué formulario pertenece -->
+  <form [formGroup]="libroForm">
+    <!-- Libro -->
+    <label>Libro</label>
+    <!-- el formCOntrolName tiene que coincidir con el correspondiente dentro del formGroup que está en el ts -->
+    <input type="text" class="form-control" formControlName="nombre" />
+    <br />
+    <!-- Género -->
+    <label>Género</label>
+    <select class="form-control" formControlName="genero">
+      <option value="">Seleccione un género</option>
+      <option *ngFor="let texto_genero of generos" [value]="texto_genero">{{
+        texto_genero
+      }}</option>
+    </select>
+    <br />
+    <!-- Link -->
+    <label>Link</label>
+    <input type="text" class="form-control" formControlName="link" />
+    <br />
+    <button type="submit" class="btn btn-danger">
+      Agregar
+    </button>
+  </form>
+  <br /><br />
+  <pre>{{ libroForm.value | json }}</pre>
+</div>
