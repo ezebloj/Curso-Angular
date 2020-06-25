@@ -5,6 +5,15 @@ input.ng-invalid.ng-touched {
 input.ng-valid.ng-dirty {
   border-left: solid 5px green;
 }
+
+select.ng-invalid.ng-touched {
+  border-left: solid 5px red;
+}
+
+select.ng-valid.ng-dirty {
+  border-left: solid 5px green;
+}
+
 /* clase para el check cuando el usuario completa bien los datos */
 .checked {
   margin-left: 8px;
