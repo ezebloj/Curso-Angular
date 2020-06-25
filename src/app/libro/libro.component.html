@@ -1,8 +1,20 @@
 <div class="container">
   <!-- el formGroup especifica a qué formulario pertenece -->
-  <form [formGroup]="libroForm">
+  <form [formGroup]="libroForm" (ngSubmit)="onSubmit()">
     <!-- Libro -->
     <label>Libro</label>
+    <!-- Cambia la sintaxis del ngIf para este tipo de formulario -->
+    <!-- libroForm -> controls -> nombre : accedo al control 'nombre' dentro de la propiedad Controls la cual guarda todos los controles pertenecientes a su correspondiente formGroup -->
+    <i
+      class="fas fa-check-circle checked"
+      *ngIf="libroForm.controls.nombre.valid && libroForm.controls.nombre.dirty"
+    ></i>
+    <i
+      class="fas fa-exclamation-circle unchecked"
+      *ngIf="
+        libroForm.controls.nombre.invalid && libroForm.controls.nombre.touched
+      "
+    ></i>
     <!-- el formControlName tiene que coincidir con el correspondiente dentro del formGroup que está en el ts -->
     <input type="text" class="form-control" formControlName="nombre" />
     <br />
@@ -19,10 +31,14 @@
     <label>Link</label>
     <input type="text" class="form-control" formControlName="link" />
     <br />
-    <button type="submit" class="btn btn-danger">
+    <button type="submit" class="btn btn-danger" [disabled]="!libroForm.valid">
       Agregar
     </button>
   </form>
   <br /><br />
+
+  <!-- Para no crear un componente nuevo que muestre los valores. Se utiliza en un ambiente de desarrollo o testeo, después hay que sacarlo -->
   <pre>{{ libroForm.value | json }}</pre>
+  <br />
+  <pre>{{ libro | json }}</pre>
 </div>

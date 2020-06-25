@@ -1,0 +1,26 @@
+input.ng-invalid.ng-touched {
+  border-left: solid 5px red;
+}
+
+input.ng-valid.ng-dirty {
+  border-left: solid 5px green;
+}
+
+select.ng-invalid.ng-touched {
+  border-left: solid 5px red;
+}
+
+select.ng-valid.ng-dirty {
+  border-left: solid 5px green;
+}
+
+/* clase para el check cuando el usuario completa bien los datos */
+.checked {
+  margin-left: 8px;
+  color: green;
+}
+
+.unchecked {
+  margin-left: 8px;
+  color: red;
+}

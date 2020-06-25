@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-libro",
@@ -21,9 +21,32 @@ export class LibroComponent implements OnInit {
   ngOnInit() {
     // inicializamos nuestra variable utilizando el método Gruop del FormBuilder que me permite darle forma a mi formulario
     this.libroForm = this.fb.group({
-      nombre: "",
-      genero: "",
-      link: "",
+      nombre: ["", Validators.required],
+      genero: ["", Validators.required],
+      link: ["", Validators.required],
     });
+  }
+
+  // ------------------------------------------------------------------------------------------------------------------------
+
+  // Función que se dispara cuando se toca el botón Agregar
+  // Almacena en la variable local "libro" (del componente) los valores del formulario
+  onSubmit() {
+    this.libro = this.saveLibro();
+  }
+
+  // ------------------------------------------------------------------------------------------------------------------------
+
+  saveLibro() {
+    // Creamos un objeto para almacenar los valores del formulario
+    // La función get del formGroup me devuelve el control correspondiente y utilizo esto para guardar el valor que tenía ese Control
+    const libro = {
+      nombre: this.libroForm.get("nombre").value,
+      genero: this.libroForm.get("genero").value,
+      link: this.libroForm.get("link").value,
+    };
+
+    // retorna el objeto creado previamente
+    return libro;
   }
 }
