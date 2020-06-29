@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { LibroService } from "../services/libro.service";
 
 @Component({
   selector: "app-libro",
@@ -9,6 +10,8 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 export class LibroComponent implements OnInit {
   generos = ["Acción", "Aventuras", "Cs. ficción", "Drama", "Infantil"];
 
+  arregloLibros: any[] = [];
+
   // objeto para llevar el formulario
   libroForm: FormGroup;
 
@@ -16,7 +19,7 @@ export class LibroComponent implements OnInit {
   libro: any;
 
   // el FormBuilder es una clase de Angular que sirve para construir formularios
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private librosService: LibroService) {}
 
   ngOnInit() {
     // inicializamos nuestra variable utilizando el método Gruop del FormBuilder que me permite darle forma a mi formulario
@@ -33,6 +36,12 @@ export class LibroComponent implements OnInit {
   // Almacena en la variable local "libro" (del componente) los valores del formulario
   onSubmit() {
     this.libro = this.saveLibro();
+    this.arregloLibros = this.librosService.setLibro(
+      this.libro.nombre,
+      this.libro.genero,
+      this.libro.link
+    );
+    this.libroForm.reset();
   }
 
   // ------------------------------------------------------------------------------------------------------------------------
@@ -45,7 +54,7 @@ export class LibroComponent implements OnInit {
       genero: this.libroForm.get("genero").value,
       link: this.libroForm.get("link").value,
     };
-
+    //this.arregloLibros.push(libro);
     // retorna el objeto creado previamente
     return libro;
   }
