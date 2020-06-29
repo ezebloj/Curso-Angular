@@ -24,13 +24,33 @@
       required
       #nombre="ngModel"
     />
-    <p class="text-danger" *ngIf="nombre.invalid && nombre.touched">
-      Por favor, escribe el nombre de la película
-    </p>
+    <div
+      class="alert alert-danger mt-2"
+      *ngIf="nombre.invalid && nombre.touched"
+      role="alert"
+    >
+      <span style="color: black;"
+        >Por favor, escribe el nombre de la película</span
+      >
+    </div>
     <br />
     <!-- Género -->
     <label>Género</label>
-    <select class="form-control" ngModel name="genero" required>
+    <i
+      class="fas fa-check-circle checked"
+      *ngIf="genero.valid && genero.dirty"
+    ></i>
+    <i
+      class="fas fa-exclamation-circle unchecked"
+      *ngIf="genero.invalid && genero.touched"
+    ></i>
+    <select
+      class="form-control"
+      ngModel
+      name="genero"
+      required
+      #genero="ngModel"
+    >
       <!-- 'value' representa el valor que se almacena en el select del formulario -->
       <option value="">Seleccione un género</option>
       <!-- el "texto_genero" debe coincidir las 3 veces -->
@@ -39,12 +59,36 @@
         texto_genero
       }}</option>
     </select>
-    <p class="text-danger" *ngIf="!genero">Por favor, escribe el género</p>
+    <div
+      class="alert alert-danger mt-2"
+      *ngIf="genero.invalid && genero.touched"
+      role="alert"
+    >
+      <span style="color: black;">Por favor, escribe el género</span>
+    </div>
     <br />
     <!-- Link -->
     <label>Link</label>
-    <input type="text" class="form-control" ngModel name="link" required />
-    <p class="text-danger" *ngIf="!link">Por favor, escribe un link</p>
+    <i class="fas fa-check-circle checked" *ngIf="link.valid && link.dirty"></i>
+    <i
+      class="fas fa-exclamation-circle unchecked"
+      *ngIf="link.invalid && link.touched"
+    ></i>
+    <input
+      type="text"
+      class="form-control"
+      ngModel
+      name="link"
+      required
+      #link="ngModel"
+    />
+    <div
+      class="alert alert-danger mt-2"
+      *ngIf="link.invalid && link.touched"
+      role="alert"
+    >
+      <span style="color: black;">Por favor, escribe un link</span>
+    </div>
     <br />
     <!-- el botón va a estar desabilitado mientras el formulario no esté valido -->
     <button type="submit" class="btn btn-danger" [disabled]="!formpeli.valid">
@@ -52,7 +96,7 @@
     </button>
   </form>
   <br /><br />
-  <!-- diry: es true cuando en el input se escribe al menos un caracter -->
+  <!-- dirty: es true cuando en el input se escribe al menos un caracter -->
   <h4>Propiedad dirty del form --> {{ formpeli.controls.nombre.dirty }}</h4>
   <!-- pristine: es true cuando en el input no se ha escrito ningún caracter -->
   <h4>

@@ -17,19 +17,68 @@
     ></i>
     <!-- el formControlName tiene que coincidir con el correspondiente dentro del formGroup que está en el ts -->
     <input type="text" class="form-control" formControlName="nombre" />
+    <div
+      class="alert alert-danger mt-2"
+      *ngIf="
+        libroForm.controls.nombre.invalid && libroForm.controls.nombre.touched
+      "
+      role="alert"
+    >
+      <span style="color: black;"
+        >Por favor, escribe el nombre de la película</span
+      >
+    </div>
     <br />
     <!-- Género -->
     <label>Género</label>
+    <i
+      class="fas fa-check-circle checked"
+      *ngIf="libroForm.controls.genero.valid && libroForm.controls.genero.dirty"
+    ></i>
+    <i
+      class="fas fa-exclamation-circle unchecked"
+      *ngIf="
+        libroForm.controls.genero.invalid && libroForm.controls.genero.touched
+      "
+    ></i>
     <select class="form-control" formControlName="genero">
       <option value="">Seleccione un género</option>
       <option *ngFor="let texto_genero of generos" [value]="texto_genero">{{
         texto_genero
       }}</option>
     </select>
+    <div
+      class="alert alert-danger mt-2"
+      *ngIf="
+        libroForm.controls.genero.invalid && libroForm.controls.genero.touched
+      "
+      role="alert"
+    >
+      <span style="color: black;"
+        >Por favor, escribe el nombre de la película</span
+      >
+    </div>
     <br />
     <!-- Link -->
     <label>Link</label>
+    <i
+      class="fas fa-check-circle checked"
+      *ngIf="libroForm.controls.link.valid && libroForm.controls.link.dirty"
+    ></i>
+    <i
+      class="fas fa-exclamation-circle unchecked"
+      *ngIf="libroForm.controls.link.invalid && libroForm.controls.link.touched"
+    ></i>
     <input type="text" class="form-control" formControlName="link" />
+    <div
+      class="alert alert-danger mt-2"
+      *ngIf="libroForm.controls.link.invalid && libroForm.controls.link.touched"
+      role="alert"
+    >
+      <span style="color: black;"
+        >Por favor, escribe el nombre de la película</span
+      >
+    </div>
     <br />
     <button type="submit" class="btn btn-danger" [disabled]="!libroForm.valid">
       Agregar
