@@ -86,8 +86,27 @@
   </form>
   <br /><br />
 
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Título</th>
+        <th scope="col">Categoría</th>
+        <th scope="col">Links</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let peli of libroForm; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ libroForm.controls.nombre }}</td>
+        <td>{{ libroForm.controls.genero }}</td>
+        <td>{{ libroForm.controls.link }}</td>
+      </tr>
+    </tbody>
+  </table>
   <!-- Para no crear un componente nuevo que muestre los valores. Se utiliza en un ambiente de desarrollo o testeo, después hay que sacarlo -->
-  <pre>{{ libroForm.value | json }}</pre>
+  <!-- <pre>{{ libroForm.value | json }}</pre>
   <br />
   <pre>{{ libro | json }}</pre>
+</div> -->
 </div>
