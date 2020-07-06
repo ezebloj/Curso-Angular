@@ -14,6 +14,9 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { VistaTablaComponent } from "./vista-tabla/vista-tabla.component";
 import { VistaTarjetaComponent } from "./vista-tarjeta/vista-tarjeta.component";
 import { LibroComponent } from "./libro/libro.component";
+// importación para trabajar con el módulo http que nos sirve para conectarnos a una base de datos
+import { HttpClientModule } from "@angular/common/http";
+import { UsuarioComponent } from './usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +29,15 @@ import { LibroComponent } from "./libro/libro.component";
     VistaTablaComponent,
     VistaTarjetaComponent,
     LibroComponent,
+    UsuarioComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [PeliculaService],
   bootstrap: [AppComponent],
 })
