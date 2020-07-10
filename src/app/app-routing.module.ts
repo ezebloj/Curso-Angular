@@ -5,6 +5,7 @@ import { VistaTablaComponent } from "./vista-tabla/vista-tabla.component";
 import { VistaTarjetaComponent } from "./vista-tarjeta/vista-tarjeta.component";
 import { LibroComponent } from "./libro/libro.component";
 import { UsuarioComponent } from "./usuario/usuario.component";
+import { TarjetaUsuarioComponent } from "./tarjeta-usuario/tarjeta-usuario.component";
 
 //definición de las rutas de la navegación, donde path es la dirección y el component es el componente al que apunta esa dirección
 const routes: Routes = [
@@ -28,6 +29,11 @@ const routes: Routes = [
   {
     path: "usuario",
     component: UsuarioComponent,
+  },
+
+  {
+    path: "tarjeta-usuario",
+    component: TarjetaUsuarioComponent,
   },
 ];
 

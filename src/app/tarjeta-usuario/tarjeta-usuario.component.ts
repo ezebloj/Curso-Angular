@@ -3,11 +3,11 @@ import { IUsuario, IRtaGetServidor } from "../models/usuario.models";
 import { UsuarioService } from "../services/usuario.service";
 
 @Component({
-  selector: "app-usuario",
-  templateUrl: "./usuario.component.html",
-  styleUrls: ["./usuario.component.css"],
+  selector: "app-tarjeta-usuario",
+  templateUrl: "./tarjeta-usuario.component.html",
+  styleUrls: ["./tarjeta-usuario.component.css"],
 })
-export class UsuarioComponent implements OnInit {
+export class TarjetaUsuarioComponent implements OnInit {
   // acá me voy a guardar todos los usuarios de la BD
   usuarios: IUsuario[] = [];
 

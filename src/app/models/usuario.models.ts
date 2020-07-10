@@ -22,3 +22,8 @@ export interface IUsuario {
     };
   };
 }
+
+export interface IRtaGetServidor {
+  _meta: any;
+  result: IUsuario[];
+}

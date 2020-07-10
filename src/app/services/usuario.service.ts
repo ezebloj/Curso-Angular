@@ -8,6 +8,7 @@ export class UsuarioService {
   // esta url es la ruta que me permite acceder a todos los usuarios (API)
   url = "https://gorest.co.in/public-api/users";
 
+  // la librería HttpClient brinda todos los métodos para conectarme con el servidor (GET, POST, PUT, DELETE, etc.)
   constructor(private http: HttpClient) {}
 
   getAllUsuarios() {

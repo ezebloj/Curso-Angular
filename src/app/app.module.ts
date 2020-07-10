@@ -17,6 +17,7 @@ import { LibroComponent } from "./libro/libro.component";
 // importación para trabajar con el módulo http que nos sirve para conectarnos a una base de datos
 import { HttpClientModule } from "@angular/common/http";
 import { UsuarioComponent } from './usuario/usuario.component';
+import { TarjetaUsuarioComponent } from './tarjeta-usuario/tarjeta-usuario.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
     VistaTarjetaComponent,
     LibroComponent,
     UsuarioComponent,
+    TarjetaUsuarioComponent,
   ],
   imports: [
     BrowserModule,
