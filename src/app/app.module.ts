@@ -18,6 +18,7 @@ import { LibroComponent } from "./libro/libro.component";
 import { HttpClientModule } from "@angular/common/http";
 import { UsuarioComponent } from './usuario/usuario.component';
 import { TarjetaUsuarioComponent } from './tarjeta-usuario/tarjeta-usuario.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TarjetaUsuarioComponent } from './tarjeta-usuario/tarjeta-usuario.compo
     LibroComponent,
     UsuarioComponent,
     TarjetaUsuarioComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
