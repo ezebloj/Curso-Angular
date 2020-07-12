@@ -28,7 +28,9 @@
       <td>{{ post.title }}</td>
       <td>{{ post.body }}</td>
       <td>
-        <a href="{{ post._links.self.href }}">{{ post._links.self.href }}</a>
+        <a href="{{ post._links.self.href }}" target="blank">{{
+          post._links.self.href
+        }}</a>
       </td>
     </tr>
   </tbody>
