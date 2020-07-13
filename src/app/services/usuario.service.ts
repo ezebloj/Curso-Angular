@@ -19,4 +19,12 @@ export class UsuarioService {
     // retorno un observable que es la respuesta del servidor y se produce cuando efectivamente el servidor nos pudo responder
     return this.http.get(this.url, { headers });
   }
+
+  getUsuarioById(id: number) {
+    const headers = new HttpHeaders({
+      Authorization: "Bearer rFAmoCZEBz5tESyhrZFwaZo9eakV3DTym2xT",
+    });
+    const url = `https://gorest.co.in/public-api/users/${id}`;
+    return this.http.get(url, { headers });
+  }
 }

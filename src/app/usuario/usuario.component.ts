@@ -11,6 +11,8 @@ export class UsuarioComponent implements OnInit {
   // acá me voy a guardar todos los usuarios de la BD
   usuarios: IUsuario[] = [];
 
+  modalAbierto = false;
+
   constructor(private usuarioService: UsuarioService) {}
 
   ngOnInit() {
@@ -21,5 +23,15 @@ export class UsuarioComponent implements OnInit {
         // dentro de la respuesta del servidor está el arreglo de usuarios (.result) y ese arreglo lo guardo en mi arreglo local (de usuarios)
         this.usuarios = rta_servidor.result;
       });
+  }
+
+  // abro o cierro el modal en base al valor del cambio
+  // false (cierra) true (abre)
+  abrir_cerrar_modal(cambio: boolean) {
+    this.modalAbierto = cambio;
+  }
+
+  obtenerDetalles() {
+    this.abrir_cerrar_modal(true);
   }
 }

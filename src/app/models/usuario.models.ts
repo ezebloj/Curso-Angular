@@ -1,6 +1,6 @@
 // la interface define la forma que tiene el objeto. La forma viene de como responde el servidor (ver API)
 export interface IUsuario {
-  id: string;
+  id: number;
   first_name: string;
   last_name: string;
   gender: string;
