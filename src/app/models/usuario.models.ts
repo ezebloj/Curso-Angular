@@ -27,3 +27,8 @@ export interface IRtaGetServidor {
   meta: any;
   result: IUsuario[];
 }
+
+export interface IRtaGetUsuarioServidor {
+  meta: any;
+  result: IUsuario;
+}

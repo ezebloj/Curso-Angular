@@ -1,5 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { IUsuario, IRtaGetServidor } from "../models/usuario.models";
+import {
+  IUsuario,
+  IRtaGetServidor,
+  IRtaGetUsuarioServidor,
+} from "../models/usuario.models";
 import { UsuarioService } from "../services/usuario.service";
 
 @Component({
@@ -14,6 +18,8 @@ export class UsuarioComponent implements OnInit {
   usuarioMarcado: IUsuario;
 
   modalAbierto = false;
+
+  mostrarLoading = false;
 
   constructor(private usuarioService: UsuarioService) {}
 
@@ -34,9 +40,13 @@ export class UsuarioComponent implements OnInit {
   }
 
   obtenerDetalles(id: number) {
+    this.mostrarLoading = true;
     this.abrir_cerrar_modal(true);
-    this.usuarioService.getUsuarioById(id).subscribe((rta_servidor: any) => {
-      this.usuarioMarcado = rta_servidor.result;
-    });
+    this.usuarioService
+      .getUsuarioById(id)
+      .subscribe((rta_servidor: IRtaGetUsuarioServidor) => {
+        this.usuarioMarcado = rta_servidor.result;
+        this.mostrarLoading = false;
+      });
   }
 }
