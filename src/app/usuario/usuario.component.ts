@@ -31,7 +31,7 @@ export class UsuarioComponent implements OnInit {
     this.modalAbierto = cambio;
   }
 
-  obtenerDetalles() {
+  obtenerDetalles(id: number) {
     this.abrir_cerrar_modal(true);
   }
 }
