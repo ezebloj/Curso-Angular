@@ -11,7 +11,11 @@ export class UsuarioComponent implements OnInit {
   // acá me voy a guardar todos los usuarios de la BD
   usuarios: IUsuario[] = [];
 
+  usuarioMarcado: IUsuario;
+
   modalAbierto = false;
+
+  mostrarLoading: boolean;
 
   constructor(private usuarioService: UsuarioService) {}
 
@@ -32,6 +36,11 @@ export class UsuarioComponent implements OnInit {
   }
 
   obtenerDetalles(id: number) {
+    this.mostrarLoading = true;
     this.abrir_cerrar_modal(true);
+    this.usuarioService.getUsuarioById(id).subscribe((rta_servidor: any) => {
+      this.usuarioMarcado = rta_servidor.result;
+      this.mostrarLoading = !this.mostrarLoading;
+    });
   }
 }
