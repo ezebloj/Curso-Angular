@@ -15,8 +15,6 @@ export class UsuarioComponent implements OnInit {
 
   modalAbierto = false;
 
-  mostrarLoading: boolean;
-
   constructor(private usuarioService: UsuarioService) {}
 
   ngOnInit() {
@@ -36,11 +34,9 @@ export class UsuarioComponent implements OnInit {
   }
 
   obtenerDetalles(id: number) {
-    this.mostrarLoading = true;
     this.abrir_cerrar_modal(true);
     this.usuarioService.getUsuarioById(id).subscribe((rta_servidor: any) => {
       this.usuarioMarcado = rta_servidor.result;
-      this.mostrarLoading = !this.mostrarLoading;
     });
   }
 }
