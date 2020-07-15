@@ -40,7 +40,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">
-            {{ usuarioMarcado.first_name }}
+            {{ usuarioMarcado?.first_name }}
           </h5>
           <div *ngIf="mostrarLoading">
             <div class="spinner-border" role="status">
@@ -57,7 +57,7 @@
           </button>
         </div>
         <div class="modal-body">
-          {{ usuarioMarcado.email }}
+          {{ usuarioMarcado?.email }}
         </div>
         <div class="modal-footer">
           <button

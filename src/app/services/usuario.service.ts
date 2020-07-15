@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { IUsuario } from "../models/usuario.models";
 
 @Injectable({
   providedIn: "root",
@@ -9,7 +10,17 @@ export class UsuarioService {
   url = "https://gorest.co.in/public-api/users";
 
   // la librería HttpClient brinda todos los métodos para conectarme con el servidor (GET, POST, PUT, DELETE, etc.)
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    // esto es solo de prueba, borrar después
+    const nuevoUsuario = {
+      first_name: "Ezequiel",
+      last_name: "Gomez",
+      gender: "male",
+      email: "ez@eze.com",
+    };
+    // cuando llegue la respuesta va a mostrarlo en la consola
+    this.setUsuario(nuevoUsuario).subscribe(console.log);
+  }
 
   getAllUsuarios() {
     // el header son datos que acompañan a la url
@@ -26,5 +37,12 @@ export class UsuarioService {
     });
     const url = `https://gorest.co.in/public-api/users/${id}`;
     return this.http.get(url, { headers });
+  }
+
+  setUsuario(usuario: IUsuario) {
+    const headers = new HttpHeaders({
+      Authorization: "Bearer rFAmoCZEBz5tESyhrZFwaZo9eakV3DTym2xT",
+    });
+    return this.http.post(this.url, usuario, { headers });
   }
 }
