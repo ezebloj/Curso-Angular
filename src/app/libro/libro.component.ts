@@ -22,7 +22,7 @@ export class LibroComponent implements OnInit {
   constructor(private fb: FormBuilder, private librosService: LibroService) {}
 
   ngOnInit() {
-    // inicializamos nuestra variable utilizando el método Gruop del FormBuilder que me permite darle forma a mi formulario
+    // inicializamos nuestra variable utilizando el método Group del FormBuilder que me permite darle forma a mi formulario
     this.libroForm = this.fb.group({
       nombre: ["", Validators.required],
       genero: ["", Validators.required],
