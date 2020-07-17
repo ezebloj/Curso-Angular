@@ -16,9 +16,10 @@ import { VistaTarjetaComponent } from "./vista-tarjeta/vista-tarjeta.component";
 import { LibroComponent } from "./libro/libro.component";
 // importación para trabajar con el módulo http que nos sirve para conectarnos a una base de datos
 import { HttpClientModule } from "@angular/common/http";
-import { UsuarioComponent } from './usuario/usuario.component';
-import { TarjetaUsuarioComponent } from './tarjeta-usuario/tarjeta-usuario.component';
-import { PostComponent } from './post/post.component';
+import { UsuarioComponent } from "./usuario/usuario.component";
+import { TarjetaUsuarioComponent } from "./tarjeta-usuario/tarjeta-usuario.component";
+import { PostComponent } from "./post/post.component";
+import { CargarUsuariosComponent } from "./cargar-usuarios/cargar-usuarios.component";
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PostComponent } from './post/post.component';
     UsuarioComponent,
     TarjetaUsuarioComponent,
     PostComponent,
+    CargarUsuariosComponent,
   ],
   imports: [
     BrowserModule,

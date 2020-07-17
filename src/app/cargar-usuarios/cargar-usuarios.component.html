@@ -1,0 +1,21 @@
+<div class="container">
+  <form [formGroup]="libroForm" (ngSubmit)="onSubmit()">
+    <label>Libro</label>
+    <input type="text" class="form-control" formControlName="nombre" />
+    <br />
+    <label>Género</label>
+    <select class="form-control" formControlName="genero">
+      <option value="">Seleccione un género</option>
+      <option *ngFor="let texto_genero of generos" [value]="texto_genero">{{
+        texto_genero
+      }}</option>
+    </select>
+    <br />
+    <label>Link</label>
+    <input type="text" class="form-control" formControlName="link" />
+    <br />
+    <button type="submit" class="btn btn-danger" [disabled]="!libroForm.valid">
+      Agregar
+    </button>
+  </form>
+</div>
