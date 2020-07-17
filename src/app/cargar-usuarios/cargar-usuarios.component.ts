@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { UsuarioService } from "../services/usuario.service";
+import { IUsuario, IRtaGetServidor } from "../models/usuario.models";
 
 @Component({
   selector: "app-cargar-usuarios",
@@ -8,42 +9,53 @@ import { UsuarioService } from "../services/usuario.service";
   styleUrls: ["./cargar-usuarios.component.css"],
 })
 export class CargarUsuariosComponent implements OnInit {
-  arregloLibros: any[] = [];
+  arregloLibros: IUsuario[] = [];
 
-  libroForm: FormGroup;
+  usuarioForm: FormGroup;
 
-  libro: any;
+  usuario: IUsuario;
 
-  constructor(private fb: FormBuilder, private librosService: UsuarioService) {}
+  constructor(
+    private fb: FormBuilder,
+    private usuarioService: UsuarioService
+  ) {}
 
   ngOnInit() {
-    this.libroForm = this.fb.group({
+    this.usuarioForm = this.fb.group({
       nombre: [""],
+      apellido: [""],
       genero: [""],
-      link: [""],
+      nacimiento: [""],
+      email: [""],
+      telefono: [""],
+      website: [""],
+      direccion: [""],
+      status: [""],
     });
   }
 
   // ------------------------------------------------------------------------------------------------------------------------
 
   onSubmit() {
-    this.libro = this.saveLibro();
-    // this.arregloLibros = this.librosService.setUsuario(
-    //   this.libro.nombre,
-    //   this.libro.genero,
-    //   this.libro.link
-    // );
-    this.libroForm.reset();
+    this.usuario = this.saveUsuario();
+    this.usuarioService.setUsuario(this.usuario).subscribe();
+    this.usuarioForm.reset();
   }
 
   // ------------------------------------------------------------------------------------------------------------------------
 
-  saveLibro() {
-    const libro = {
-      nombre: this.libroForm.get("nombre").value,
-      genero: this.libroForm.get("genero").value,
-      link: this.libroForm.get("link").value,
+  saveUsuario() {
+    const usuario = {
+      nombre: this.usuarioForm.get("nombre").value,
+      apellido: this.usuarioForm.get("apellido").value,
+      genero: this.usuarioForm.get("genero").value,
+      nacimiento: this.usuarioForm.get("nacimiento").value,
+      email: this.usuarioForm.get("email").value,
+      telefono: this.usuarioForm.get("telefono").value,
+      website: this.usuarioForm.get("website").value,
+      direccion: this.usuarioForm.get("direccion").value,
+      status: this.usuarioForm.get("status").value,
     };
-    return libro;
+    return usuario;
   }
 }

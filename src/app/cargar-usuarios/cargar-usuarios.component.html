@@ -1,10 +1,10 @@
 <div class="container">
-  <form [formGroup]="libroForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
     <label>Nombre</label>
     <input type="text" class="form-control" formControlName="nombre" />
     <br />
     <label>Apellido</label>
-    <input type="text" class="form-control" formControlName="nombre" />
+    <input type="text" class="form-control" formControlName="apellido" />
     <br />
     <label>Género</label>
     <select class="form-control" formControlName="genero">
@@ -14,28 +14,28 @@
     </select>
     <br />
     <label>Fecha de nacimiento</label>
-    <input type="text" class="form-control" formControlName="link" />
+    <input type="text" class="form-control" formControlName="nacimiento" />
     <br />
     <label>Email</label>
-    <input type="text" class="form-control" formControlName="link" />
+    <input type="text" class="form-control" formControlName="email" />
     <br />
     <label>Teléfono</label>
-    <input type="text" class="form-control" formControlName="link" />
+    <input type="text" class="form-control" formControlName="telefono" />
     <br />
     <label>Website</label>
-    <input type="text" class="form-control" formControlName="link" />
+    <input type="text" class="form-control" formControlName="website" />
     <br />
-    <label>Address</label>
-    <input type="text" class="form-control" formControlName="link" />
+    <label>Dirección</label>
+    <input type="text" class="form-control" formControlName="direccion" />
     <br />
     <label>Status</label>
-    <select class="form-control" formControlName="genero">
+    <select class="form-control" formControlName="status">
       <option value="">Seleccione el Status</option>
       <option>active</option>
       <option>inactive</option>
     </select>
     <br />
-    <button type="submit" class="btn btn-danger" [disabled]="!libroForm.valid">
+    <button type="submit" class="btn btn-danger">
       Agregar
     </button>
   </form>
