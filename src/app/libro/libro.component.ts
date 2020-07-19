@@ -13,6 +13,7 @@ export class LibroComponent implements OnInit {
   arregloLibros: any[] = [];
 
   // objeto para llevar el formulario
+  // debe coincidir con el del HTML
   libroForm: FormGroup;
 
   // objeto que representa un libro
@@ -23,6 +24,7 @@ export class LibroComponent implements OnInit {
 
   ngOnInit() {
     // inicializamos nuestra variable utilizando el método Group del FormBuilder que me permite darle forma a mi formulario
+    // las variables del html deben ser las mismas que las del ts
     this.libroForm = this.fb.group({
       nombre: ["", Validators.required],
       genero: ["", Validators.required],
