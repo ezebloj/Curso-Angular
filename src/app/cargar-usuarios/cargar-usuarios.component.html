@@ -28,15 +28,10 @@
     <label>Dirección</label>
     <input type="text" class="form-control" formControlName="direccion" />
     <br />
-    <label>Status</label>
-    <select class="form-control" formControlName="status">
-      <option value="">Seleccione el Status</option>
-      <option>active</option>
-      <option>inactive</option>
-    </select>
-    <br />
     <button type="submit" class="btn btn-danger">
       Agregar
     </button>
   </form>
+  <br />
+  <pre>{{ rtaServidor | json }}</pre>
 </div>

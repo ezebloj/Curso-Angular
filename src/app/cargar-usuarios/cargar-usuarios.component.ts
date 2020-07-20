@@ -15,6 +15,8 @@ export class CargarUsuariosComponent implements OnInit {
 
   usuario: IUsuario;
 
+  rtaServidor: any;
+
   constructor(
     private fb: FormBuilder,
     private usuarioService: UsuarioService
@@ -30,7 +32,6 @@ export class CargarUsuariosComponent implements OnInit {
       telefono: [""],
       website: [""],
       direccion: [""],
-      status: [""],
     });
   }
 
@@ -38,7 +39,11 @@ export class CargarUsuariosComponent implements OnInit {
 
   onSubmit() {
     this.usuario = this.saveUsuario();
-    this.usuarioService.setUsuario(this.usuario).subscribe();
+    this.usuarioService
+      .setUsuario(this.usuario)
+      .subscribe((rta_servidor: any) => {
+        this.rtaServidor = rta_servidor;
+      });
     this.usuarioForm.reset();
   }
 
@@ -46,15 +51,14 @@ export class CargarUsuariosComponent implements OnInit {
 
   saveUsuario() {
     const usuario = {
-      nombre: this.usuarioForm.get("nombre").value,
-      apellido: this.usuarioForm.get("apellido").value,
-      genero: this.usuarioForm.get("genero").value,
-      nacimiento: this.usuarioForm.get("nacimiento").value,
+      first_name: this.usuarioForm.get("nombre").value,
+      last_name: this.usuarioForm.get("apellido").value,
+      gender: this.usuarioForm.get("genero").value,
+      dob: this.usuarioForm.get("nacimiento").value,
       email: this.usuarioForm.get("email").value,
-      telefono: this.usuarioForm.get("telefono").value,
+      phone: this.usuarioForm.get("telefono").value,
       website: this.usuarioForm.get("website").value,
-      direccion: this.usuarioForm.get("direccion").value,
-      status: this.usuarioForm.get("status").value,
+      address: this.usuarioForm.get("direccion").value,
     };
     return usuario;
   }
