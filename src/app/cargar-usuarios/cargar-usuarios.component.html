@@ -28,7 +28,11 @@
     <label>Dirección</label>
     <input type="text" class="form-control" formControlName="direccion" />
     <br />
-    <button type="submit" class="btn btn-danger">
+    <button
+      type="submit"
+      class="btn btn-danger"
+      [disabled]="!usuarioForm.valid"
+    >
       Agregar
     </button>
   </form>

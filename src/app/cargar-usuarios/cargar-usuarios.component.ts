@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { UsuarioService } from "../services/usuario.service";
 import {
   IUsuario,
@@ -26,11 +26,11 @@ export class CargarUsuariosComponent implements OnInit {
 
   ngOnInit() {
     this.usuarioForm = this.fb.group({
-      nombre: [""],
-      apellido: [""],
-      genero: [""],
+      nombre: ["", Validators.required],
+      apellido: ["", Validators.required],
+      genero: ["", Validators.required],
       nacimiento: [""],
-      email: [""],
+      email: ["", Validators.required],
       telefono: [""],
       website: [""],
       direccion: [""],
