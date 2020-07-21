@@ -38,7 +38,6 @@
   </form>
   <br />
   <pre>{{ rtaServidor | json }}</pre>
-  <br />
   <div
     class="backdrop"
     [ngStyle]="{ display: modalAbierto ? 'block' : 'none' }"
@@ -52,12 +51,12 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" *ngIf="!mostrarLoading">
-              <div *ngIf="rtaServidor._meta.success">
+              <!-- <div *ngIf="rtaServidor._meta.success">
                 El usuario se ha guardado correctamente con el siguiente ID
               </div>
               <div *ngIf="!rtaServidor._meta.success">
                 Error
-              </div>
+              </div> -->
             </h5>
             <div *ngIf="mostrarLoading">
               <div class="spinner-border" role="status">
@@ -74,12 +73,12 @@
             </button>
           </div>
           <div class="modal-body" *ngIf="!mostrarLoading">
-            <div *ngIf="rtaServidor._meta.success">
+            <!-- <div *ngIf="rtaServidor._meta.success">
               {{ rtaServidor.result.id }}
             </div>
             <div *ngIf="!rtaServidor._meta.success">
               No se pudo guardar el usuario cargado. Verifique los datos
-            </div>
+            </div> -->
           </div>
           <div class="modal-footer">
             <button
