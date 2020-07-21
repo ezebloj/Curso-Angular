@@ -25,11 +25,11 @@ export interface IUsuario {
 }
 
 export interface IRtaGetServidor {
-  meta: any;
+  _meta: any;
   result: IUsuario[];
 }
 
 export interface IRtaGetUsuarioServidor {
-  meta: any;
+  _meta: any;
   result: IUsuario;
 }

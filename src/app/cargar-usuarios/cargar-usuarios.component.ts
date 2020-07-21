@@ -19,6 +19,10 @@ export class CargarUsuariosComponent implements OnInit {
 
   rtaServidor: IRtaGetUsuarioServidor;
 
+  modalAbierto = false;
+
+  mostrarLoading = false;
+
   constructor(
     private fb: FormBuilder,
     private usuarioService: UsuarioService
@@ -41,12 +45,14 @@ export class CargarUsuariosComponent implements OnInit {
 
   onSubmit() {
     this.usuario = this.saveUsuario();
+    this.mostrarLoading = true;
+    this.abrir_cerrar_modal(true);
     this.usuarioService
       .setUsuario(this.usuario)
       .subscribe((rta_servidor: IRtaGetUsuarioServidor) => {
         this.rtaServidor = rta_servidor;
+        this.mostrarLoading = false;
       });
-    this.usuarioForm.reset();
   }
 
   // ------------------------------------------------------------------------------------------------------------------------
@@ -63,5 +69,15 @@ export class CargarUsuariosComponent implements OnInit {
       address: this.usuarioForm.get("direccion").value,
     };
     return usuario;
+  }
+
+  abrir_cerrar_modal(cambio: boolean) {
+    this.modalAbierto = cambio;
+  }
+
+  resetear() {
+    if (this.rtaServidor._meta.success) {
+      this.usuarioForm.reset();
+    }
   }
 }
