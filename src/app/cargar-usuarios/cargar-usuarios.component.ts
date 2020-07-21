@@ -9,13 +9,11 @@ import { IUsuario, IRtaGetServidor } from "../models/usuario.models";
   styleUrls: ["./cargar-usuarios.component.css"],
 })
 export class CargarUsuariosComponent implements OnInit {
-  arregloLibros: IUsuario[] = [];
-
   usuarioForm: FormGroup;
 
   usuario: IUsuario;
 
-  rtaServidor: any;
+  rtaServidor: IRtaGetServidor;
 
   constructor(
     private fb: FormBuilder,
@@ -41,7 +39,7 @@ export class CargarUsuariosComponent implements OnInit {
     this.usuario = this.saveUsuario();
     this.usuarioService
       .setUsuario(this.usuario)
-      .subscribe((rta_servidor: any) => {
+      .subscribe((rta_servidor: IRtaGetServidor) => {
         this.rtaServidor = rta_servidor;
       });
     this.usuarioForm.reset();
