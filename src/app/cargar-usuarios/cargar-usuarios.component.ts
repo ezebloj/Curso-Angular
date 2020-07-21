@@ -1,7 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { UsuarioService } from "../services/usuario.service";
-import { IUsuario, IRtaGetServidor } from "../models/usuario.models";
+import {
+  IUsuario,
+  IRtaGetServidor,
+  IRtaGetUsuarioServidor,
+} from "../models/usuario.models";
 
 @Component({
   selector: "app-cargar-usuarios",
@@ -13,7 +17,7 @@ export class CargarUsuariosComponent implements OnInit {
 
   usuario: IUsuario;
 
-  rtaServidor: IRtaGetServidor;
+  rtaServidor: IRtaGetUsuarioServidor;
 
   constructor(
     private fb: FormBuilder,
@@ -39,7 +43,7 @@ export class CargarUsuariosComponent implements OnInit {
     this.usuario = this.saveUsuario();
     this.usuarioService
       .setUsuario(this.usuario)
-      .subscribe((rta_servidor: IRtaGetServidor) => {
+      .subscribe((rta_servidor: IRtaGetUsuarioServidor) => {
         this.rtaServidor = rta_servidor;
       });
     this.usuarioForm.reset();
