@@ -52,6 +52,9 @@ export class CargarUsuariosComponent implements OnInit {
       .subscribe((rta_servidor: IRtaGetUsuarioServidor) => {
         this.rtaServidor = rta_servidor;
         this.mostrarLoading = false;
+        if (this.rtaServidor._meta.success) {
+          this.usuarioForm.reset();
+        }
       });
   }
 
@@ -73,11 +76,5 @@ export class CargarUsuariosComponent implements OnInit {
 
   abrir_cerrar_modal(cambio: boolean) {
     this.modalAbierto = cambio;
-  }
-
-  resetear() {
-    if (this.rtaServidor._meta.success) {
-      this.usuarioForm.reset();
-    }
   }
 }
