@@ -21,6 +21,10 @@ export class UsuarioComponent implements OnInit {
 
   mostrarLoading = false;
 
+  modalBorrarAbierto = false;
+
+  idBorrarUsuario: number;
+
   constructor(private usuarioService: UsuarioService) {}
 
   ngOnInit() {
@@ -48,5 +52,23 @@ export class UsuarioComponent implements OnInit {
         this.usuarioMarcado = rta_servidor.result;
         this.mostrarLoading = false;
       });
+  }
+
+  abrir_cerrar_modal_borrar(cambio: boolean) {
+    this.modalBorrarAbierto = cambio;
+  }
+
+  confirmar(id: number) {
+    this.abrir_cerrar_modal_borrar(true);
+    this.idBorrarUsuario = id;
+  }
+
+  borrarUsuario() {
+    this.usuarioService
+      .deleteUsuario(this.idBorrarUsuario)
+      .subscribe((rta_servidor: IRtaGetUsuarioServidor) => {
+        this.usuarioMarcado = rta_servidor.result;
+      });
+    this.abrir_cerrar_modal_borrar(false);
   }
 }

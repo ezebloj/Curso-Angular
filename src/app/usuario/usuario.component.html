@@ -5,8 +5,10 @@
       <th scope="col">Nombre</th>
       <th scope="col">Apellido</th>
       <th scope="col">Género</th>
-      <th scope="col">Mail</th>
-      <th scope="col">Acciones</th>
+      <th class="text-center" scope="col">Mail</th>
+      <th class="text-center" scope="col">Acc</th>
+      <th class="text-center" scope="col">Acc. 2</th>
+      <th class="text-center" scope="col">Acc. 3</th>
     </tr>
   </thead>
   <tbody>
@@ -15,14 +17,28 @@
       <td>{{ usuario.first_name }}</td>
       <td>{{ usuario.last_name }}</td>
       <td>{{ usuario.gender }}</td>
-      <td>{{ usuario.email }}</td>
-      <td>
+      <td class="text-center">{{ usuario.email }}</td>
+      <td class="text-center">
         <button
           type="button"
           class="btn btn-link"
           (click)="obtenerDetalles(usuario.id)"
         >
           Ver
+        </button>
+      </td>
+      <td class="text-center">
+        <button type="button" class="btn btn-link">
+          Editar
+        </button>
+      </td>
+      <td class="text-center">
+        <button
+          type="button"
+          class="btn btn-link"
+          (click)="confirmar(usuario.id)"
+        >
+          Borrar
         </button>
       </td>
     </tr>
@@ -66,6 +82,41 @@
             (click)="abrir_cerrar_modal(false)"
           >
             Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="backdrop"
+  [ngStyle]="{ display: modalBorrarAbierto ? 'block' : 'none' }"
+>
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    [ngStyle]="{ display: modalBorrarAbierto ? 'block' : 'none', opacity: 1 }"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          ¿Está seguro oque quiere borrar este ítem?
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="abrir_cerrar_modal_borrar(false)"
+          >
+            Close
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="borrarUsuario()"
+          >
+            Aceptar
           </button>
         </div>
       </div>
