@@ -12,14 +12,14 @@ export class UsuarioService {
   // la librería HttpClient brinda todos los métodos para conectarme con el servidor (GET, POST, PUT, DELETE, etc.)
   constructor(private http: HttpClient) {
     // esto es solo de prueba, borrar después
-    const nuevoUsuario = {
-      first_name: "Ezequiel",
-      last_name: "Gomez",
-      gender: "male",
-      email: "ezee4@eze.com",
-    };
-    // cuando llegue la respuesta va a mostrarlo en la consola
-    this.updateUsuario(nuevoUsuario, 7626).subscribe(console.log);
+    // const nuevoUsuario = {
+    //   first_name: "Ezequiel",
+    //   last_name: "Gomez",
+    //   gender: "male",
+    //   email: "ezeep@eze.com",
+    // };
+    // // cuando llegue la respuesta va a mostrarlo en la consola
+    // this.updateUsuario(nuevoUsuario, 7635).subscribe(console.log);
   }
 
   //obtiene todos los usuarios
