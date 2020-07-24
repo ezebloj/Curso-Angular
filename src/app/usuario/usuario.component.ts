@@ -71,4 +71,12 @@ export class UsuarioComponent implements OnInit {
       });
     this.abrir_cerrar_modal_borrar(false);
   }
+
+  cargarDatos(id: number) {
+    this.usuarioService
+      .getUsuarioById(id)
+      .subscribe((rta_servidor: IRtaGetUsuarioServidor) => {
+        this.usuarioMarcado = rta_servidor.result;
+      });
+  }
 }
