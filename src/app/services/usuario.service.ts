@@ -10,6 +10,9 @@ export class UsuarioService {
   url = "https://gorest.co.in/public-api/users";
 
   // la librería HttpClient brinda todos los métodos para conectarme con el servidor (GET, POST, PUT, DELETE, etc.)
+
+  usuario: IUsuario;
+
   constructor(private http: HttpClient) {
     // esto es solo de prueba, borrar después
     // const nuevoUsuario = {
@@ -65,5 +68,11 @@ export class UsuarioService {
     });
     const url = `https://gorest.co.in/public-api/users/${id}`;
     return this.http.delete(url, { headers });
+  }
+
+  // función creada para guardar el usuario que se quiere editar
+  setUsuarioEditar(usuarioEdit: IUsuario) {
+    const usuario = new IUsuario(usuarioEdit);
+    this.usuario = usuario;
   }
 }

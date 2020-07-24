@@ -58,11 +58,13 @@ export class UsuarioComponent implements OnInit {
     this.modalBorrarAbierto = cambio;
   }
 
+  // función que se ejecuta cuando se toca Borrar en el html y pide la confirmación antes de borrar
   confirmar(id: number) {
     this.abrir_cerrar_modal_borrar(true);
     this.idBorrarUsuario = id;
   }
 
+  // función que se ejecuta cuando se confirma la función anterior y borra el usuario
   borrarUsuario() {
     this.usuarioService
       .deleteUsuario(this.idBorrarUsuario)
@@ -72,11 +74,15 @@ export class UsuarioComponent implements OnInit {
     this.abrir_cerrar_modal_borrar(false);
   }
 
+  // función que se ejecuta cuando se toca Editar en el html y obtiene los datos según el ID del usuario a través del servicio
+  // (similar a la función obtenerDetalles y luego manda los datos del usuario al servicio nuevamente a través de
+  // la función setUsuarioEditar
   cargarDatos(id: number) {
     this.usuarioService
       .getUsuarioById(id)
       .subscribe((rta_servidor: IRtaGetUsuarioServidor) => {
         this.usuarioMarcado = rta_servidor.result;
+        this.usuarioService.setUsuarioEditar(this.usuarioMarcado);
       });
   }
 }
