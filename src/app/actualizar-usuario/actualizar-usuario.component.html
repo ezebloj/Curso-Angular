@@ -1,0 +1,39 @@
+<div class="container">
+  <form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+    <label>Nombre</label>
+    <input type="text" class="form-control" formControlName="nombre" />
+    <br />
+    <label>Apellido</label>
+    <input type="text" class="form-control" formControlName="apellido" />
+    <br />
+    <label>Género</label>
+    <select class="form-control" formControlName="genero">
+      <option value="">Seleccione el género</option>
+      <option>male</option>
+      <option>female</option>
+    </select>
+    <br />
+    <label>Fecha de nacimiento</label>
+    <input type="text" class="form-control" formControlName="nacimiento" />
+    <br />
+    <label>Email</label>
+    <input type="text" class="form-control" formControlName="email" />
+    <br />
+    <label>Teléfono</label>
+    <input type="text" class="form-control" formControlName="telefono" />
+    <br />
+    <label>Website</label>
+    <input type="text" class="form-control" formControlName="website" />
+    <br />
+    <label>Dirección</label>
+    <input type="text" class="form-control" formControlName="direccion" />
+    <br />
+    <button
+      type="submit"
+      class="btn btn-danger"
+      [disabled]="!usuarioForm.valid"
+    >
+      Agregar
+    </button>
+  </form>
+</div>

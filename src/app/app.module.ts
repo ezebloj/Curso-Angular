@@ -20,6 +20,7 @@ import { UsuarioComponent } from "./usuario/usuario.component";
 import { TarjetaUsuarioComponent } from "./tarjeta-usuario/tarjeta-usuario.component";
 import { PostComponent } from "./post/post.component";
 import { CargarUsuariosComponent } from "./cargar-usuarios/cargar-usuarios.component";
+import { ActualizarUsuarioComponent } from './actualizar-usuario/actualizar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { CargarUsuariosComponent } from "./cargar-usuarios/cargar-usuarios.compo
     TarjetaUsuarioComponent,
     PostComponent,
     CargarUsuariosComponent,
+    ActualizarUsuarioComponent,
   ],
   imports: [
     BrowserModule,
