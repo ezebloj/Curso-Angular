@@ -72,7 +72,12 @@ export class UsuarioService {
 
   // función creada para guardar el usuario que se quiere editar
   setUsuarioEditar(usuarioEdit: IUsuario) {
-    const usuario = new IUsuario(usuarioEdit);
-    this.usuario = usuario;
+    this.usuario = usuarioEdit;
   }
+
+  //   setUsuarioEditar(usuarioEdit: IUsuario) {
+  //     const usuario = new IUsuario(usuarioEdit);
+  //     this.usuario = usuario;
+  //   }
+  // }
 }
