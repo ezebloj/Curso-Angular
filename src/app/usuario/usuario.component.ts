@@ -58,7 +58,7 @@ export class UsuarioComponent implements OnInit {
     this.modalBorrarAbierto = cambio;
   }
 
-  // función que se ejecuta cuando se toca Borrar en el html y pide la confirmación antes de borrar
+  // función que se ejecuta cuando se toca Borrar en el html y pide confirmar antes de borrar
   confirmar(id: number) {
     this.abrir_cerrar_modal_borrar(true);
     this.idBorrarUsuario = id;
