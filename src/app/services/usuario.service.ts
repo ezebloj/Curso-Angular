@@ -75,6 +75,11 @@ export class UsuarioService {
     this.usuario = usuarioEdit;
   }
 
+  // función creada para devolver el usuario que se quiere editar en el formulario
+  getUsuarioEditar() {
+    return this.usuario;
+  }
+
   //   setUsuarioEditar(usuarioEdit: IUsuario) {
   //     const usuario = new IUsuario(usuarioEdit);
   //     this.usuario = usuario;

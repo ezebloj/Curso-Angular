@@ -23,14 +23,26 @@ export class ActualizarUsuarioComponent implements OnInit {
   // la idea es iniciar el html y aparezcan ya cargados en el formaulario los datos del usuario que se quieren editar
   ngOnInit() {
     this.usuarioForm = this.fb.group({
-      nombre: [this.usuarioService.usuario.first_name, Validators.required],
-      apellido: [this.usuarioService.usuario.last_name, Validators.required],
-      genero: [this.usuarioService.usuario.gender, Validators.required],
-      nacimiento: [this.usuarioService.usuario.dob],
-      email: [this.usuarioService.usuario.email, Validators.required],
-      telefono: [this.usuarioService.usuario.phone],
-      website: [this.usuarioService.usuario.website],
-      direccion: [this.usuarioService.usuario.address],
+      nombre: [
+        this.usuarioService.getUsuarioEditar().first_name,
+        Validators.required,
+      ],
+      apellido: [
+        this.usuarioService.getUsuarioEditar().last_name,
+        Validators.required,
+      ],
+      genero: [
+        this.usuarioService.getUsuarioEditar().gender,
+        Validators.required,
+      ],
+      nacimiento: [this.usuarioService.getUsuarioEditar().dob],
+      email: [
+        this.usuarioService.getUsuarioEditar().email,
+        Validators.required,
+      ],
+      telefono: [this.usuarioService.getUsuarioEditar().phone],
+      website: [this.usuarioService.getUsuarioEditar().website],
+      direccion: [this.usuarioService.getUsuarioEditar().address],
     });
   }
 
