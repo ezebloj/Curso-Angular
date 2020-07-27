@@ -17,6 +17,8 @@ export class ActualizarUsuarioComponent implements OnInit {
 
   rtaServidor: IRtaGetUsuarioServidor;
 
+  modalAbierto = false;
+
   constructor(
     private fb: FormBuilder,
     private usuarioService: UsuarioService
@@ -24,7 +26,7 @@ export class ActualizarUsuarioComponent implements OnInit {
 
   // la idea es iniciar el html y aparezcan ya cargados en el formaulario los datos del usuario que se quieren editar
   ngOnInit() {
-    console.log(this.usuarioEditar);
+    // console.log(this.usuarioEditar);
     this.usuarioForm = this.fb.group({
       nombre: [this.usuarioEditar.first_name, Validators.required],
       apellido: [this.usuarioEditar.last_name, Validators.required],
@@ -46,6 +48,7 @@ export class ActualizarUsuarioComponent implements OnInit {
       .updateUsuario(this.usuario, this.usuarioService.usuario.id)
       .subscribe((rta_servidor: IRtaGetUsuarioServidor) => {
         this.rtaServidor = rta_servidor;
+        this.abrir_cerrar_modal(true);
         if (this.rtaServidor._meta.success) {
           this.usuarioForm.reset();
         }
@@ -66,5 +69,9 @@ export class ActualizarUsuarioComponent implements OnInit {
       address: this.usuarioForm.get("direccion").value,
     };
     return usuario;
+  }
+
+  abrir_cerrar_modal(cambio: boolean) {
+    this.modalAbierto = cambio;
   }
 }

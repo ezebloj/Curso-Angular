@@ -36,5 +36,39 @@
       Agregar
     </button>
   </form>
-  <pre>{{ usuarioEditar | json }}</pre>
+  <!-- <pre>{{ usuarioEditar | json }}</pre>
+  <pre>{{ rtaServidor | json }}</pre> -->
+
+  <div
+    class="backdrop"
+    [ngStyle]="{ display: modalAbierto ? 'block' : 'none' }"
+  >
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      [ngStyle]="{ display: modalAbierto ? 'block' : 'none', opacity: 1 }"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <span *ngIf="rtaServidor?._meta.success">
+              Actualización exitosa
+            </span>
+            <span *ngIf="!rtaServidor?._meta.success">
+              No se pudo actualizar el usuario. Verifique los datos cargados
+            </span>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="abrir_cerrar_modal(false)"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

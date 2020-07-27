@@ -6,6 +6,7 @@ import {
   IRtaDeleteServidor,
 } from "../models/usuario.models";
 import { UsuarioService } from "../services/usuario.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-usuario",
@@ -28,7 +29,7 @@ export class UsuarioComponent implements OnInit {
 
   borradoConfirmado: boolean;
 
-  constructor(private usuarioService: UsuarioService) {}
+  constructor(private usuarioService: UsuarioService, public router: Router) {}
 
   ngOnInit() {
     // accedo a la función getAllUsuarios de mi servicio la cual me permite acceder a la respuesta del servidor
@@ -89,6 +90,7 @@ export class UsuarioComponent implements OnInit {
       .subscribe((rta_servidor: IRtaGetUsuarioServidor) => {
         this.usuarioMarcado = rta_servidor.result;
         this.usuarioService.setUsuarioEditar(this.usuarioMarcado);
+        this.router.navigate(["actualizar-usuario"]);
       });
   }
 
