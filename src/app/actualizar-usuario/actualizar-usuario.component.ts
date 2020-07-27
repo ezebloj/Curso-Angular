@@ -13,6 +13,7 @@ export class ActualizarUsuarioComponent implements OnInit {
 
   usuario: IUsuario;
 
+  usuarioEditar = this.usuarioService.getUsuarioEditar();
   rtaServidor: IRtaGetUsuarioServidor;
 
   constructor(
@@ -23,26 +24,14 @@ export class ActualizarUsuarioComponent implements OnInit {
   // la idea es iniciar el html y aparezcan ya cargados en el formaulario los datos del usuario que se quieren editar
   ngOnInit() {
     this.usuarioForm = this.fb.group({
-      nombre: [
-        this.usuarioService.getUsuarioEditar().first_name,
-        Validators.required,
-      ],
-      apellido: [
-        this.usuarioService.getUsuarioEditar().last_name,
-        Validators.required,
-      ],
-      genero: [
-        this.usuarioService.getUsuarioEditar().gender,
-        Validators.required,
-      ],
-      nacimiento: [this.usuarioService.getUsuarioEditar().dob],
-      email: [
-        this.usuarioService.getUsuarioEditar().email,
-        Validators.required,
-      ],
-      telefono: [this.usuarioService.getUsuarioEditar().phone],
-      website: [this.usuarioService.getUsuarioEditar().website],
-      direccion: [this.usuarioService.getUsuarioEditar().address],
+      nombre: [this.usuarioEditar.first_name, Validators.required],
+      apellido: [this.usuarioEditar.last_name, Validators.required],
+      genero: [this.usuarioEditar.gender, Validators.required],
+      nacimiento: [this.usuarioEditar.dob],
+      email: [this.usuarioEditar.email, Validators.required],
+      telefono: [this.usuarioEditar.phone],
+      website: [this.usuarioEditar.website],
+      direccion: [this.usuarioEditar.address],
     });
   }
 
