@@ -14,6 +14,7 @@ export class ActualizarUsuarioComponent implements OnInit {
   usuario: IUsuario;
 
   usuarioEditar = this.usuarioService.getUsuarioEditar();
+
   rtaServidor: IRtaGetUsuarioServidor;
 
   constructor(
