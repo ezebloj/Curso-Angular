@@ -33,3 +33,8 @@ export interface IRtaGetUsuarioServidor {
   _meta: any;
   result: IUsuario;
 }
+
+export interface IRtaDeleteServidor {
+  _meta: any;
+  result: any;
+}

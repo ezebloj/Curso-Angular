@@ -3,6 +3,7 @@ import {
   IUsuario,
   IRtaGetServidor,
   IRtaGetUsuarioServidor,
+  IRtaDeleteServidor,
 } from "../models/usuario.models";
 import { UsuarioService } from "../services/usuario.service";
 
@@ -24,6 +25,8 @@ export class UsuarioComponent implements OnInit {
   modalBorrarAbierto = false;
 
   idBorrarUsuario: number;
+
+  borradoConfirmado: boolean;
 
   constructor(private usuarioService: UsuarioService) {}
 
@@ -68,8 +71,11 @@ export class UsuarioComponent implements OnInit {
   borrarUsuario() {
     this.usuarioService
       .deleteUsuario(this.idBorrarUsuario)
-      .subscribe((rta_servidor: IRtaGetUsuarioServidor) => {
-        this.usuarioMarcado = rta_servidor.result;
+      .subscribe((rta_servidor: IRtaDeleteServidor) => {
+        this.borradoConfirmado = rta_servidor._meta.success;
+        if (this.borradoConfirmado) {
+          this.borrarElementoArray(this.idBorrarUsuario);
+        }
       });
     this.abrir_cerrar_modal_borrar(false);
   }
@@ -84,5 +90,19 @@ export class UsuarioComponent implements OnInit {
         this.usuarioMarcado = rta_servidor.result;
         this.usuarioService.setUsuarioEditar(this.usuarioMarcado);
       });
+  }
+
+  borrarElementoArray(id: number) {
+    // crea una variable para guardar el índice donde se encuentra el elemento que buscamos (el id es igual al id que estamos recibiendo de parámetro)
+    // el 'user' es similar al let del ngFor (puede tener cualquier nombre de variable)
+    // console.log("ID desde función borrarElementoArray: " + id);
+    const index = this.usuarios.findIndex((user) => {
+      return user.id == id;
+    });
+    // console.log("índice de la función de búsqueda: " + index);
+    // si el índice es mayor que -1 es decir, lo encontró (porque si fuera -1 significa que no encontró ese elemento en el arreglo)
+    if (index > -1) {
+      this.usuarios.splice(index, 1);
+    }
   }
 }
