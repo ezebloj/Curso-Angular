@@ -14,7 +14,7 @@ export class ActualizarUsuarioComponent implements OnInit {
 
   usuario: IUsuario;
 
-  usuarioEditar = this.usuarioService.getUsuarioEditar();
+  usuarioEditar: IUsuario;
 
   rtaServidor: IRtaGetUsuarioServidor;
 
@@ -24,7 +24,10 @@ export class ActualizarUsuarioComponent implements OnInit {
     private fb: FormBuilder,
     private usuarioService: UsuarioService,
     public router: Router
-  ) {}
+  ) {
+    // por formalismo, conviene inicializar las variables dentro del constructor (darle valor)
+    this.usuarioEditar = this.usuarioService.getUsuarioEditar();
+  }
 
   // la idea es iniciar el html y aparezcan ya cargados en el formaulario los datos del usuario que se quieren editar
   ngOnInit() {

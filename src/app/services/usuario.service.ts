@@ -79,10 +79,4 @@ export class UsuarioService {
   getUsuarioEditar() {
     return this.usuario;
   }
-
-  //   setUsuarioEditar(usuarioEdit: IUsuario) {
-  //     const usuario = new IUsuario(usuarioEdit);
-  //     this.usuario = usuario;
-  //   }
-  // }
 }
