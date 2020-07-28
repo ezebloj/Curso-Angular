@@ -59,13 +59,24 @@
             </span>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              (click)="abrir_cerrar_modal(false)"
-            >
-              Close
-            </button>
+            <div *ngIf="rtaServidor?._meta.success">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                (click)="volver()"
+              >
+                Close
+              </button>
+            </div>
+            <div *ngIf="!rtaServidor?._meta.success">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                (click)="abrir_cerrar_modal(false)"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       </div>

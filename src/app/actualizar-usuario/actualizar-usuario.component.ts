@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { IUsuario, IRtaGetUsuarioServidor } from "../models/usuario.models";
 import { UsuarioService } from "../services/usuario.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-actualizar-usuario",
@@ -21,7 +22,8 @@ export class ActualizarUsuarioComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
+    public router: Router
   ) {}
 
   // la idea es iniciar el html y aparezcan ya cargados en el formaulario los datos del usuario que se quieren editar
@@ -73,5 +75,10 @@ export class ActualizarUsuarioComponent implements OnInit {
 
   abrir_cerrar_modal(cambio: boolean) {
     this.modalAbierto = cambio;
+  }
+
+  volver() {
+    this.abrir_cerrar_modal(false);
+    this.router.navigate(["usuario"]);
   }
 }
