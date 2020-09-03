@@ -70,11 +70,6 @@ export class UsuarioService {
     return this.http.delete(url, { headers });
   }
 
-  // función creada para guardar el usuario que se quiere editar
-  setUsuarioEditar(usuarioEdit: IUsuario) {
-    this.usuario = usuarioEdit;
-  }
-
   // función creada para devolver el usuario que se quiere editar en el formulario
   getUsuarioEditar() {
     return this.usuario;
